@@ -1,0 +1,19 @@
+Policy,SL(Type1),Fill Rate,Avg Profit,SO Rate,Waste%
+Empirical Newsvendor,0.6107,0.8795,0.2862,0.3893,24.41
+Naive (Q=forecast),0.5818,0.8665,0.2846,0.4182,23.6
+Q50 Direct,0.5693,0.8589,0.2808,0.4307,23.32
+Quantile-Direct Interp,0.6271,0.8828,0.2711,0.3729,25.63
+Quantile Newsvendor,0.6271,0.8828,0.2711,0.3729,25.63
+"Newsvendor (Normal, CR=0.556)",0.6919,0.9038,0.2671,0.3081,27.18
+SAA (2000 scenarios),0.6915,0.9035,0.2667,0.3085,27.19
+Safety Stock (0.25*sigma),0.7646,0.9258,0.2364,0.2354,30.16
+Zero-Inflated Gamma,0.6391,0.8255,0.1929,0.3609,27.15
+KDE Newsvendor,0.6952,0.8554,0.1607,0.3048,30.9
+Safety Stock (0.5*sigma),0.8786,0.9584,0.1279,0.1214,36.82
+Q90 Direct,0.8844,0.9662,0.0642,0.1156,39.7
+Safety Stock (0.75*sigma),0.9388,0.9757,-0.0154,0.0612,42.89
+Perishable Cost Opt (CR=0.794),0.9484,0.9789,-0.0586,0.0516,44.42
+Safety Stock (1.0*sigma),0.9663,0.9853,-0.176,0.0337,48.14
+Dynamic Safety Stock,0.9705,0.9815,-0.378,0.0295,53.33
+Safety Stock (1.5*sigma),0.989,0.9938,-0.5214,0.011,56.46
+Service Level (alpha=0.95),0.9909,0.9951,-0.6242,0.0091,58.43

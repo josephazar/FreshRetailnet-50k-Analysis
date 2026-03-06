@@ -1,0 +1,5 @@
+Method,Mean,Median,Std
+Observed Sales,1.0077456,0.7,1.5276135
+Proportional,5.0670543,2.0,14.688481
+Time-Weighted,6.0745625,1.9230767,21.304655
+Tobit (IMR),0.5354577,0.08,1.2822201

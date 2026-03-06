@@ -1,0 +1,22 @@
+# Core data science
+numpy>=1.24.0
+pandas>=2.0.0
+pyarrow>=12.0.0
+
+# Machine Learning
+lightgbm>=4.0.0
+scikit-learn>=1.3.0
+scipy>=1.11.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.15.0
+
+# Jupyter
+jupyter>=1.0.0
+jupyterlab>=4.0.0
+ipywidgets>=8.0.0
+
+# Utilities
+tqdm>=4.65.0

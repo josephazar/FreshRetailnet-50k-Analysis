@@ -1,0 +1,4 @@
+Approach,Policy,SL(Type1),Fill Rate,Avg Profit,SO Rate,Waste%,Type,Approx Revenue,Approx Total Cost
+① Static MinMax (No ML),Static MinMax (hist μ+σ),0.7322,0.876,0.1597,0.2678,31.98,,,
+② ML Forecast Only,Naive (Q=forecast),0.5818,0.8665,0.2846,0.4182,23.6,Normal-Based,1.0317648382782936,0.7471648382782936
+③ ML + Optimization,Empirical Newsvendor,0.6107,0.8795,0.2862,0.3893,24.41,Non-Normal,1.0472442876696586,0.7610442876696586

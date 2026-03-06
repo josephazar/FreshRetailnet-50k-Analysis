@@ -1,0 +1,4 @@
+Stage,Policy,SL(Type1),Fill Rate,Avg Order,Avg Demand,Avg Revenue,Avg TotalCost,Avg Profit,SO Rate,Avg Waste,Waste%
+Static MinMax (no ML),Static MinMax (hist μ+σ),0.7278,0.8751,1.5361,1.2043,1.0539,0.8825,0.1714,0.2722,0.4822,31.39
+ML Forecast Only,Naive (Q=forecast),0.5382,0.8827,1.2031,1.2043,1.0631,0.6079,0.4552,0.4618,0.14,11.64
+ML + Optimization,Empirical Newsvendor,0.5803,0.9286,1.2662,1.2043,1.1183,0.6086,0.5097,0.4197,0.1479,11.68
