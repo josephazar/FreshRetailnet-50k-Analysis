@@ -40,3 +40,17 @@ build
 *.aux
 *.bbl
 .DS_Store
+
+.idea
+.vscode
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*.tmp
+*.bak
+*.backup
+*.log
+
+
+supplementary_materials

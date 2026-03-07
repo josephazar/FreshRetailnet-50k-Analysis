@@ -1,0 +1,4 @@
+Experiment,Q (kg),Method,Mean Profit,Correlation,MAE (kg)
+Single SP - Analytical Q*,20.83,Analytical,1.6423,,
+Single SP - MC Optimal Q,21.67,Monte Carlo,1.9124,,
+50-SP Validation,,Comparison,,0.9936,0.04
