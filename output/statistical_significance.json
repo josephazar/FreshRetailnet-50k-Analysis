@@ -1,0 +1,421 @@
+{
+  "config": {
+    "n_bootstrap": 10000,
+    "ci_level": 0.95,
+    "alpha": 0.05,
+    "reference_model": "LGBM_Minimal"
+  },
+  "bootstrap_cis": {
+    "Naive Seasonal": {
+      "MAE": {
+        "point": 0.470915369047619,
+        "lower": 0.46192288095238093,
+        "upper": 0.480037794047619
+      },
+      "WAPE": {
+        "point": 39.548562072827465,
+        "lower": 38.80828106333932,
+        "upper": 40.29276377145433
+      },
+      "WPE": {
+        "point": -8.177708774532084,
+        "lower": -8.986293210615047,
+        "upper": -7.3500338698851095
+      },
+      "Profit": {
+        "point": 0.26448990944759804,
+        "lower": 0.25167903283268783,
+        "upper": 0.2774895868365762
+      }
+    },
+    "SSA": {
+      "MAE": {
+        "point": 0.47356261654162923,
+        "lower": 0.4637926524486704,
+        "upper": 0.4834283405994598
+      },
+      "WAPE": {
+        "point": 39.77088404131776,
+        "lower": 39.13084991225639,
+        "upper": 40.429417227408344
+      },
+      "WPE": {
+        "point": -10.093090241074847,
+        "lower": -10.9097475590859,
+        "upper": -9.249942426524822
+      },
+      "Profit": {
+        "point": 0.25955381339348116,
+        "lower": 0.24849373968862162,
+        "upper": 0.2712526041620993
+      }
+    },
+    "DLinear": {
+      "MAE": {
+        "point": 0.4148692372819583,
+        "lower": 0.4074065047034718,
+        "upper": 0.42245798263917983
+      },
+      "WAPE": {
+        "point": 34.84167827423994,
+        "lower": 34.108921468466015,
+        "upper": 35.58311980039869
+      },
+      "WPE": {
+        "point": -0.7055295143988914,
+        "lower": -1.490348270748361,
+        "upper": 0.07178193213076799
+      },
+      "Profit": {
+        "point": 0.3221384941300455,
+        "lower": 0.30818070919844925,
+        "upper": 0.33679586480084595
+      }
+    },
+    "LGBM Minimal": {
+      "MAE": {
+        "point": 0.3946869134965856,
+        "lower": 0.3869011008527071,
+        "upper": 0.4027672111367755
+      },
+      "WAPE": {
+        "point": 33.14672003447394,
+        "lower": 32.5412159086667,
+        "upper": 33.77480497336218
+      },
+      "WPE": {
+        "point": -6.861219784563323,
+        "lower": -7.585544581950994,
+        "upper": -6.128176238825352
+      },
+      "Profit": {
+        "point": 0.33978456939069485,
+        "lower": 0.3268971674314271,
+        "upper": 0.3530480995651097
+      }
+    },
+    "XGBoost Minimal": {
+      "MAE": {
+        "point": 0.4121447073276053,
+        "lower": 0.40227086981780785,
+        "upper": 0.42225955412235
+      },
+      "WAPE": {
+        "point": 34.61286592055634,
+        "lower": 34.08447123171316,
+        "upper": 35.144268887398404
+      },
+      "WPE": {
+        "point": -9.645129277761304,
+        "lower": -10.451290005825905,
+        "upper": -8.831389634594622
+      },
+      "Profit": {
+        "point": 0.3212001010486154,
+        "lower": 0.31067778021307463,
+        "upper": 0.33203988513221355
+      }
+    },
+    "CatBoost Minimal": {
+      "MAE": {
+        "point": 0.3964790339592177,
+        "lower": 0.3883731721368587,
+        "upper": 0.40484701328275635
+      },
+      "WAPE": {
+        "point": 33.29722645668251,
+        "lower": 32.70094804261802,
+        "upper": 33.893955291202545
+      },
+      "WPE": {
+        "point": -7.418497904556992,
+        "lower": -8.140271731821946,
+        "upper": -6.675455886863704
+      },
+      "Profit": {
+        "point": 0.33749300443486,
+        "lower": 0.32488904340526165,
+        "upper": 0.3504575499071798
+      }
+    }
+  },
+  "wilcoxon_tests": [
+    {
+      "Comparison": "LGBM_Minimal vs Naive_Seasonal",
+      "Metric": "MAE",
+      "N_pairs": 3000,
+      "Mean_LGBM_Minimal": 0.39469,
+      "Mean_Naive_Seasonal": 0.47092,
+      "Mean_diff": 0.07623,
+      "Median_diff": 0.03314,
+      "W_statistic": 1076181.0,
+      "p_value": 0.0,
+      "Significant": "True",
+      "Effect_size_r": 0.5219,
+      "Interpretation": "large",
+      "Holm_significant": "True",
+      "Holm_threshold": 0.003333
+    },
+    {
+      "Comparison": "LGBM_Minimal vs SSA",
+      "Metric": "MAE",
+      "N_pairs": 3000,
+      "Mean_LGBM_Minimal": 0.39469,
+      "Mean_SSA": 0.47356,
+      "Mean_diff": 0.07888,
+      "Median_diff": 0.01447,
+      "W_statistic": 1476149.0,
+      "p_value": 0.0,
+      "Significant": "True",
+      "Effect_size_r": 0.3442,
+      "Interpretation": "medium",
+      "Holm_significant": "True",
+      "Holm_threshold": 0.003571
+    },
+    {
+      "Comparison": "LGBM_Minimal vs DLinear",
+      "Metric": "MAE",
+      "N_pairs": 3000,
+      "Mean_LGBM_Minimal": 0.39469,
+      "Mean_DLinear": 0.41487,
+      "Mean_diff": 0.02018,
+      "Median_diff": 0.00905,
+      "W_statistic": 1668978.0,
+      "p_value": 0.0,
+      "Significant": "True",
+      "Effect_size_r": 0.2585,
+      "Interpretation": "small",
+      "Holm_significant": "True",
+      "Holm_threshold": 0.003846
+    },
+    {
+      "Comparison": "LGBM_Minimal vs XGBoost_Minimal",
+      "Metric": "MAE",
+      "N_pairs": 3000,
+      "Mean_LGBM_Minimal": 0.39469,
+      "Mean_XGBoost_Minimal": 0.41214,
+      "Mean_diff": 0.01746,
+      "Median_diff": 0.00067,
+      "W_statistic": 2095297.0,
+      "p_value": 0.001051,
+      "Significant": "True",
+      "Effect_size_r": 0.0691,
+      "Interpretation": "negligible",
+      "Holm_significant": "True",
+      "Holm_threshold": 0.01
+    },
+    {
+      "Comparison": "LGBM_Minimal vs CatBoost_Minimal",
+      "Metric": "MAE",
+      "N_pairs": 3000,
+      "Mean_LGBM_Minimal": 0.39469,
+      "Mean_CatBoost_Minimal": 0.39648,
+      "Mean_diff": 0.00179,
+      "Median_diff": 0.00025,
+      "W_statistic": 2233364.0,
+      "p_value": 0.714039,
+      "Significant": "False",
+      "Effect_size_r": -0.0077,
+      "Interpretation": "negligible",
+      "Holm_significant": "False",
+      "Holm_threshold": 0.016667
+    },
+    {
+      "Comparison": "LGBM_Minimal vs Naive_Seasonal",
+      "Metric": "PROFIT",
+      "N_pairs": 3000,
+      "Mean_LGBM_Minimal": 0.33978,
+      "Mean_Naive_Seasonal": 0.26449,
+      "Mean_diff": -0.07529,
+      "Median_diff": -0.0326,
+      "W_statistic": 1055199.0,
+      "p_value": 0.0,
+      "Significant": "True",
+      "Effect_size_r": -0.5312,
+      "Interpretation": "large",
+      "Holm_significant": "True",
+      "Holm_threshold": 0.004167
+    },
+    {
+      "Comparison": "LGBM_Minimal vs SSA",
+      "Metric": "PROFIT",
+      "N_pairs": 3000,
+      "Mean_LGBM_Minimal": 0.33978,
+      "Mean_SSA": 0.25955,
+      "Mean_diff": -0.08023,
+      "Median_diff": -0.0156,
+      "W_statistic": 1411791.0,
+      "p_value": 0.0,
+      "Significant": "True",
+      "Effect_size_r": -0.3727,
+      "Interpretation": "medium",
+      "Holm_significant": "True",
+      "Holm_threshold": 0.004545
+    },
+    {
+      "Comparison": "LGBM_Minimal vs DLinear",
+      "Metric": "PROFIT",
+      "N_pairs": 3000,
+      "Mean_LGBM_Minimal": 0.33978,
+      "Mean_DLinear": 0.32214,
+      "Mean_diff": -0.01765,
+      "Median_diff": -0.00782,
+      "W_statistic": 1689995.0,
+      "p_value": 0.0,
+      "Significant": "True",
+      "Effect_size_r": -0.2491,
+      "Interpretation": "small",
+      "Holm_significant": "True",
+      "Holm_threshold": 0.005
+    },
+    {
+      "Comparison": "LGBM_Minimal vs XGBoost_Minimal",
+      "Metric": "PROFIT",
+      "N_pairs": 3000,
+      "Mean_LGBM_Minimal": 0.33978,
+      "Mean_XGBoost_Minimal": 0.3212,
+      "Mean_diff": -0.01858,
+      "Median_diff": -0.00102,
+      "W_statistic": 2029844.0,
+      "p_value": 3e-06,
+      "Significant": "True",
+      "Effect_size_r": -0.0981,
+      "Interpretation": "negligible",
+      "Holm_significant": "True",
+      "Holm_threshold": 0.008333
+    },
+    {
+      "Comparison": "LGBM_Minimal vs CatBoost_Minimal",
+      "Metric": "PROFIT",
+      "N_pairs": 3000,
+      "Mean_LGBM_Minimal": 0.33978,
+      "Mean_CatBoost_Minimal": 0.33749,
+      "Mean_diff": -0.00229,
+      "Median_diff": -0.0002,
+      "W_statistic": 2248772.0,
+      "p_value": 0.966746,
+      "Significant": "False",
+      "Effect_size_r": -0.0009,
+      "Interpretation": "negligible",
+      "Holm_significant": "False",
+      "Holm_threshold": 0.05
+    },
+    {
+      "Comparison": "LGBM_Minimal vs Naive_Seasonal",
+      "Metric": "WAPE",
+      "N_pairs": 2999,
+      "Mean_LGBM_Minimal": 41.14339,
+      "Mean_Naive_Seasonal": 50.13137,
+      "Mean_diff": 8.98798,
+      "Median_diff": 4.11661,
+      "W_statistic": 1054908.0,
+      "p_value": 0.0,
+      "Significant": "True",
+      "Effect_size_r": 0.531,
+      "Interpretation": "large",
+      "Holm_significant": "True",
+      "Holm_threshold": 0.005556
+    },
+    {
+      "Comparison": "LGBM_Minimal vs SSA",
+      "Metric": "WAPE",
+      "N_pairs": 2999,
+      "Mean_LGBM_Minimal": 41.14339,
+      "Mean_SSA": 48.61526,
+      "Mean_diff": 7.47187,
+      "Median_diff": 2.00024,
+      "W_statistic": 1459548.0,
+      "p_value": 0.0,
+      "Significant": "True",
+      "Effect_size_r": 0.3511,
+      "Interpretation": "medium",
+      "Holm_significant": "True",
+      "Holm_threshold": 0.00625
+    },
+    {
+      "Comparison": "LGBM_Minimal vs DLinear",
+      "Metric": "WAPE",
+      "N_pairs": 2999,
+      "Mean_LGBM_Minimal": 41.14339,
+      "Mean_DLinear": 45.29635,
+      "Mean_diff": 4.15296,
+      "Median_diff": 1.14569,
+      "W_statistic": 1637773.0,
+      "p_value": 0.0,
+      "Significant": "True",
+      "Effect_size_r": 0.2719,
+      "Interpretation": "small",
+      "Holm_significant": "True",
+      "Holm_threshold": 0.007143
+    },
+    {
+      "Comparison": "LGBM_Minimal vs XGBoost_Minimal",
+      "Metric": "WAPE",
+      "N_pairs": 2999,
+      "Mean_LGBM_Minimal": 41.14339,
+      "Mean_XGBoost_Minimal": 41.19322,
+      "Mean_diff": 0.04983,
+      "Median_diff": 0.09017,
+      "W_statistic": 2138376.0,
+      "p_value": 0.019387,
+      "Significant": "True",
+      "Effect_size_r": 0.0493,
+      "Interpretation": "negligible",
+      "Holm_significant": "False",
+      "Holm_threshold": 0.0125
+    },
+    {
+      "Comparison": "LGBM_Minimal vs CatBoost_Minimal",
+      "Metric": "WAPE",
+      "N_pairs": 2999,
+      "Mean_LGBM_Minimal": 41.14339,
+      "Mean_CatBoost_Minimal": 41.04808,
+      "Mean_diff": -0.09531,
+      "Median_diff": 0.03197,
+      "W_statistic": 2240511.0,
+      "p_value": 0.853794,
+      "Significant": "False",
+      "Effect_size_r": -0.0039,
+      "Interpretation": "negligible",
+      "Holm_significant": "False",
+      "Holm_threshold": 0.025
+    }
+  ],
+  "ci_overlap": [
+    {
+      "Comparison": "LGBM_Minimal vs Naive_Seasonal",
+      "Ref_CI": "[0.3869, 0.4028]",
+      "Alt_CI": "[0.4619, 0.4800]",
+      "Overlaps": "False",
+      "Overlap_pct": 0.0
+    },
+    {
+      "Comparison": "LGBM_Minimal vs SSA",
+      "Ref_CI": "[0.3869, 0.4028]",
+      "Alt_CI": "[0.4638, 0.4834]",
+      "Overlaps": "False",
+      "Overlap_pct": 0.0
+    },
+    {
+      "Comparison": "LGBM_Minimal vs DLinear",
+      "Ref_CI": "[0.3869, 0.4028]",
+      "Alt_CI": "[0.4074, 0.4225]",
+      "Overlaps": "False",
+      "Overlap_pct": 0.0
+    },
+    {
+      "Comparison": "LGBM_Minimal vs XGBoost_Minimal",
+      "Ref_CI": "[0.3869, 0.4028]",
+      "Alt_CI": "[0.4023, 0.4223]",
+      "Overlaps": "True",
+      "Overlap_pct": 3.1
+    },
+    {
+      "Comparison": "LGBM_Minimal vs CatBoost_Minimal",
+      "Ref_CI": "[0.3869, 0.4028]",
+      "Alt_CI": "[0.3884, 0.4048]",
+      "Overlaps": "True",
+      "Overlap_pct": 90.7
+    }
+  ]
+}

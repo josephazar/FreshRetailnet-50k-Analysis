@@ -10,7 +10,7 @@ Enhancements over pipeline_final.py:
 5. SMAPE analysis segmented by demand volume
 
 Pipeline:
-1.  Data loading & stratified sampling (5000 store-product combos)
+1.  Data loading (all 50,000 store-product combos)
 2.  Censored demand recovery (time-weighted + Tobit) -> features, not target
 3.  Feature engineering (120+ features incl. hierarchy & clustering)
 4.  Temporal CV: 4-fold expanding-window LightGBM training
@@ -20,6 +20,9 @@ Pipeline:
 7.  Inventory optimization (20 policies incl. static baseline & non-Normal)
 8.  Visualization & analysis (incl. before-vs-after baseline comparison)
 """
+
+import os
+os.environ.setdefault('OMP_NUM_THREADS', '4')  # prevent segfaults from thread contention
 
 import numpy as np
 import pandas as pd
@@ -33,7 +36,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import seaborn as sns
-import warnings, gc, os, json, time
+import warnings, gc, json, time
 
 warnings.filterwarnings('ignore')
 np.random.seed(42)
@@ -41,8 +44,8 @@ np.random.seed(42)
 # ============================================================================
 # CONFIGURATION
 # ============================================================================
-N_SP = 5000
-N_CLUSTERS = 25   # K-Means clusters for hierarchy exploitation
+N_SP = 0          # 0 = use ALL store-product pairs (full 50K dataset)
+N_CLUSTERS = 50   # K-Means clusters for hierarchy exploitation (scaled for 50K)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(BASE_DIR, 'output')
@@ -96,7 +99,7 @@ HOURLY_PROFILE = HOURLY_PROFILE / HOURLY_PROFILE.sum()  # normalize to sum=1
 # ============================================================================
 def load_data():
     print("=" * 80)
-    print("STEP 1: DATA LOADING & STRATIFIED SAMPLING")
+    print("STEP 1: DATA LOADING")
     print("=" * 80)
 
     cols = ['city_id', 'store_id', 'management_group_id', 'first_category_id',
@@ -106,29 +109,34 @@ def load_data():
 
     train = pd.read_parquet(TRAIN_PATH, columns=cols)
     train['sp'] = train['store_id'] * 10000 + train['product_id']
-
-    # Stratified sample by stockout rate
-    so = train.groupby('sp')['stock_hour6_22_cnt'].apply(lambda x: (x > 0).mean())
-    so = so.reset_index()
-    so.columns = ['sp', 'sor']
-    so['bin'] = pd.qcut(so['sor'], q=5, labels=False, duplicates='drop')
-
-    sampled = so.groupby('bin').apply(
-        lambda x: x.sample(min(len(x), N_SP // 5), random_state=42)
-    ).reset_index(drop=True)['sp'].values
-    if len(sampled) < N_SP:
-        extra = np.random.choice(list(set(so['sp']) - set(sampled)),
-                                 N_SP - len(sampled), replace=False)
-        sampled = np.concatenate([sampled, extra])
-    sampled = set(sampled[:N_SP])
-
-    train = train[train['sp'].isin(sampled)].copy()
     train['dt'] = pd.to_datetime(train['dt'])
 
     ev = pd.read_parquet(EVAL_PATH, columns=cols)
     ev['sp'] = ev['store_id'] * 10000 + ev['product_id']
-    ev = ev[ev['sp'].isin(sampled)].copy()
     ev['dt'] = pd.to_datetime(ev['dt'])
+
+    if N_SP > 0 and N_SP < train['sp'].nunique():
+        # Stratified sample by stockout rate (for smaller-scale runs)
+        print(f"  Stratified sampling: {N_SP:,} SPs from {train['sp'].nunique():,}")
+        so = train.groupby('sp')['stock_hour6_22_cnt'].apply(lambda x: (x > 0).mean())
+        so = so.reset_index()
+        so.columns = ['sp', 'sor']
+        so['bin'] = pd.qcut(so['sor'], q=5, labels=False, duplicates='drop')
+
+        sampled = so.groupby('bin').apply(
+            lambda x: x.sample(min(len(x), N_SP // 5), random_state=42)
+        ).reset_index(drop=True)['sp'].values
+        if len(sampled) < N_SP:
+            extra = np.random.choice(list(set(so['sp']) - set(sampled)),
+                                     N_SP - len(sampled), replace=False)
+            sampled = np.concatenate([sampled, extra])
+        sampled = set(sampled[:N_SP])
+
+        train = train[train['sp'].isin(sampled)].copy()
+        ev = ev[ev['sp'].isin(sampled)].copy()
+        del so
+    else:
+        print(f"  Using ALL {train['sp'].nunique():,} store-product pairs (full dataset)")
 
     # Downcast for memory efficiency
     for c in train.select_dtypes('int64').columns:
@@ -139,12 +147,16 @@ def load_data():
         train[c] = train[c].astype('float32')
         ev[c] = ev[c].astype('float32')
 
-    print(f"  Train: {train.shape}, Eval: {ev.shape}")
+    print(f"  Train: {train.shape[0]:,} rows x {train.shape[1]} cols, "
+          f"{train['sp'].nunique():,} SPs")
+    print(f"  Eval:  {ev.shape[0]:,} rows x {ev.shape[1]} cols, "
+          f"{ev['sp'].nunique():,} SPs")
     print(f"  Dates: {train['dt'].min().date()} to {train['dt'].max().date()} | "
           f"{ev['dt'].min().date()} to {ev['dt'].max().date()}")
     print(f"  Stockout rate: {(train['stock_hour6_22_cnt'] > 0).mean() * 100:.1f}%")
+    print(f"  Memory: train={train.memory_usage(deep=True).sum() / 1e9:.2f} GB, "
+          f"eval={ev.memory_usage(deep=True).sum() / 1e9:.2f} GB")
 
-    del so
     gc.collect()
     return train, ev
 
@@ -719,16 +731,24 @@ def predict_eval(models, fc, train_df, eval_df, cluster_model, sp_behavior):
         m_corr = np.corrcoef(y, p)[0, 1]
         m_wmae = np.sum(np.abs(y - p) * y) / np.sum(y) if np.sum(y) > 0 else 0
         m_bias = np.mean(p - y)
+        sum_y = np.sum(y)
+        m_wape = (np.sum(np.abs(y - p)) / sum_y * 100) if sum_y > 0 else 0
+        m_wpe = (np.sum(p - y) / sum_y * 100) if sum_y > 0 else 0
 
         metrics_all[name] = {
             'MAE': m_mae, 'RMSE': m_rmse, 'SMAPE': m_smape, 'MAPE': m_mape,
-            'Corr': m_corr, 'WMAE': m_wmae, 'Bias': m_bias
+            'Corr': m_corr, 'WMAE': m_wmae, 'Bias': m_bias,
+            'WAPE': m_wape, 'WPE': m_wpe
         }
         print(f"  ║  {name:10s}: MAE={m_mae:.4f} RMSE={m_rmse:.4f} SMAPE={m_smape:.1f}% "
               f"Corr={m_corr:.4f} Bias={m_bias:+.3f} ║")
 
     cov = np.mean((y >= preds['q10']) & (y <= preds['q90']))
+    ens_wape = metrics_all['ensemble']['WAPE']
+    ens_wpe = metrics_all['ensemble']['WPE']
     print(f"  ║  80% PI coverage: {cov * 100:.1f}%                                       ║")
+    print(f"  ║  WAPE={ens_wape:.2f}%, WPE={ens_wpe:+.2f}% "
+          f"(cf. Wang et al. TFT+TimesNet: 29.02%, +2.58%)     ║")
     print("  ╚═══════════════════════════════════════════════════════════════╝")
 
     sp_std = train_df.groupby('sp')['sale_amount'].std().fillna(0.1).to_dict()
@@ -1051,39 +1071,35 @@ def run_inventory(preds, actuals, sp_keys, sp_std_map, cfg, train_df):
         results.append(eval_policy(Q, D, cfg, f"SS ({ss}σ)"))
 
     # ---- NEW POLICIES: Non-Normal Distributions (Improvement #3) ----
-    print("\n  Computing non-Normal distribution policies...")
-
-    # 15. Empirical Newsvendor: use residual quantiles
-    residuals = actuals - mu  # actual - predicted
-    # Per-SP residual quantile at the critical ratio
     unique_sps = np.unique(sp_keys)
-    Q_emp = np.zeros(len(mu))
-    for sp_id in unique_sps:
-        mask = sp_keys == sp_id
-        sp_resid = residuals[mask]
-        if len(sp_resid) > 1:
-            safety = np.quantile(sp_resid, cr_nv)
-        else:
-            safety = 0
-        Q_emp[mask] = mu[mask] + safety
+    n_sps = len(unique_sps)
+    print(f"\n  Computing non-Normal distribution policies ({n_sps:,} SPs)...")
+
+    # 15. Empirical Newsvendor: use residual quantiles (vectorized via pandas)
+    residuals = actuals - mu  # actual - predicted
+    _df_resid = pd.DataFrame({'sp': sp_keys, 'resid': residuals})
+    sp_safety = _df_resid.groupby('sp')['resid'].quantile(cr_nv).to_dict()
+    Q_emp = mu + np.array([sp_safety.get(sp, 0) for sp in sp_keys])
     Q_emp = np.maximum(Q_emp, 0)
     results.append(eval_policy(Q_emp, D, cfg, "Empirical Newsvendor"))
+    del _df_resid
+    print("    Empirical Newsvendor - done")
 
     # 16. Zero-Inflated Gamma Newsvendor
     # Fit Gamma to positive demand per SP, then find the critical ratio quantile
     Q_gamma = np.zeros(len(mu))
-    sp_demand_train = train_df.groupby('sp')['sale_amount'].apply(list).to_dict()
+    sp_demand_train = train_df.groupby('sp')['sale_amount'].apply(np.array).to_dict()
 
-    for sp_id in unique_sps:
+    t0_gamma = time.time()
+    for i, sp_id in enumerate(unique_sps):
         mask = sp_keys == sp_id
-        hist_demand = np.array(sp_demand_train.get(sp_id, [0.5]))
+        hist_demand = sp_demand_train.get(sp_id, np.array([0.5]))
         positive = hist_demand[hist_demand > 0.01]
 
         if len(positive) >= 5:
             try:
                 shape, _, scale = gamma_dist.fit(positive, floc=0)
                 p0 = np.mean(hist_demand <= 0.01)  # zero probability
-                # Adjusted critical ratio accounting for zero mass
                 adj_cr = (cr_nv - p0) / max(1 - p0, 0.01)
                 adj_cr = np.clip(adj_cr, 0.01, 0.99)
                 Q_gamma[mask] = gamma_dist.ppf(adj_cr, shape, scale=scale)
@@ -1092,22 +1108,27 @@ def run_inventory(preds, actuals, sp_keys, sp_std_map, cfg, train_df):
         else:
             Q_gamma[mask] = mu[mask] + 0.5 * sigma[mask]
 
+        if (i + 1) % 10000 == 0:
+            print(f"    Gamma NV: {i+1:,}/{n_sps:,} SPs "
+                  f"({time.time() - t0_gamma:.0f}s)")
+
     Q_gamma = np.maximum(Q_gamma, 0)
     results.append(eval_policy(Q_gamma, D, cfg, "Zero-Inflated Gamma NV"))
+    print(f"    Gamma Newsvendor - done ({time.time() - t0_gamma:.0f}s)")
 
     # 17. KDE Newsvendor
     Q_kde = np.zeros(len(mu))
-    for sp_id in unique_sps:
+    t0_kde = time.time()
+    for i, sp_id in enumerate(unique_sps):
         mask = sp_keys == sp_id
-        hist_demand = np.array(sp_demand_train.get(sp_id, [0.5]))
+        hist_demand = sp_demand_train.get(sp_id, np.array([0.5]))
 
         if len(hist_demand) >= 10:
             try:
                 kde = gaussian_kde(hist_demand, bw_method='silverman')
-                # Numerically find the quantile
-                x_grid = np.linspace(0, max(hist_demand) * 2 + 1, 500)
+                x_grid = np.linspace(0, max(hist_demand) * 2 + 1, 300)
                 cdf = np.cumsum(kde(x_grid)) * (x_grid[1] - x_grid[0])
-                cdf = cdf / cdf[-1]  # normalize
+                cdf = cdf / cdf[-1]
                 idx = np.searchsorted(cdf, cr_nv)
                 Q_kde[mask] = x_grid[min(idx, len(x_grid) - 1)]
             except Exception:
@@ -1115,8 +1136,13 @@ def run_inventory(preds, actuals, sp_keys, sp_std_map, cfg, train_df):
         else:
             Q_kde[mask] = mu[mask] + 0.5 * sigma[mask]
 
+        if (i + 1) % 10000 == 0:
+            print(f"    KDE NV: {i+1:,}/{n_sps:,} SPs "
+                  f"({time.time() - t0_kde:.0f}s)")
+
     Q_kde = np.maximum(Q_kde, 0)
     results.append(eval_policy(Q_kde, D, cfg, "KDE Newsvendor"))
+    print(f"    KDE Newsvendor - done ({time.time() - t0_kde:.0f}s)")
 
     # 18. Quantile-Direct Interpolated
     # Interpolate between Q10, Q50, Q90 to match the critical ratio
@@ -1577,9 +1603,12 @@ def main():
         json.dump({k: {kk: round(float(vv), 4) for kk, vv in v.items()}
                    for k, v in fmetrics.items()}, f, indent=2)
 
+    actual_n_sp = len(np.unique(sp_keys))
     with open(f'{OUT}/config.json', 'w') as f:
         json.dump({
-            'N_SP': N_SP, 'N_CLUSTERS': N_CLUSTERS,
+            'N_SP': actual_n_sp,
+            'N_SP_setting': N_SP,  # 0 = all
+            'N_CLUSTERS': N_CLUSTERS,
             'LGB_BASE': LGB_BASE, 'INV_CFG': INV_CFG,
             'demand_recovery_method': 'tobit',
             'cv_folds': 4,

@@ -1,0 +1,16 @@
+Comparison,Metric,N_pairs,Mean_LGBM_Minimal,Mean_Naive_Seasonal,Mean_diff,Median_diff,W_statistic,p_value,Significant,Effect_size_r,Interpretation,Holm_significant,Holm_threshold,Mean_SSA,Mean_DLinear,Mean_XGBoost_Minimal,Mean_CatBoost_Minimal
+LGBM_Minimal vs Naive_Seasonal,MAE,3000,0.39469,0.47092,0.07623,0.03314,1076181.0,0.0,True,0.5219,large,True,0.003333,,,,
+LGBM_Minimal vs SSA,MAE,3000,0.39469,,0.07888,0.01447,1476149.0,0.0,True,0.3442,medium,True,0.003571,0.47356,,,
+LGBM_Minimal vs DLinear,MAE,3000,0.39469,,0.02018,0.00905,1668978.0,0.0,True,0.2585,small,True,0.003846,,0.41487,,
+LGBM_Minimal vs XGBoost_Minimal,MAE,3000,0.39469,,0.01746,0.00067,2095297.0,0.001051,True,0.0691,negligible,True,0.01,,,0.41214,
+LGBM_Minimal vs CatBoost_Minimal,MAE,3000,0.39469,,0.00179,0.00025,2233364.0,0.714039,False,-0.0077,negligible,False,0.016667,,,,0.39648
+LGBM_Minimal vs Naive_Seasonal,PROFIT,3000,0.33978,0.26449,-0.07529,-0.0326,1055199.0,0.0,True,-0.5312,large,True,0.004167,,,,
+LGBM_Minimal vs SSA,PROFIT,3000,0.33978,,-0.08023,-0.0156,1411791.0,0.0,True,-0.3727,medium,True,0.004545,0.25955,,,
+LGBM_Minimal vs DLinear,PROFIT,3000,0.33978,,-0.01765,-0.00782,1689995.0,0.0,True,-0.2491,small,True,0.005,,0.32214,,
+LGBM_Minimal vs XGBoost_Minimal,PROFIT,3000,0.33978,,-0.01858,-0.00102,2029844.0,3e-06,True,-0.0981,negligible,True,0.008333,,,0.3212,
+LGBM_Minimal vs CatBoost_Minimal,PROFIT,3000,0.33978,,-0.00229,-0.0002,2248772.0,0.966746,False,-0.0009,negligible,False,0.05,,,,0.33749
+LGBM_Minimal vs Naive_Seasonal,WAPE,2999,41.14339,50.13137,8.98798,4.11661,1054908.0,0.0,True,0.531,large,True,0.005556,,,,
+LGBM_Minimal vs SSA,WAPE,2999,41.14339,,7.47187,2.00024,1459548.0,0.0,True,0.3511,medium,True,0.00625,48.61526,,,
+LGBM_Minimal vs DLinear,WAPE,2999,41.14339,,4.15296,1.14569,1637773.0,0.0,True,0.2719,small,True,0.007143,,45.29635,,
+LGBM_Minimal vs XGBoost_Minimal,WAPE,2999,41.14339,,0.04983,0.09017,2138376.0,0.019387,True,0.0493,negligible,False,0.0125,,,41.19322,
+LGBM_Minimal vs CatBoost_Minimal,WAPE,2999,41.14339,,-0.09531,0.03197,2240511.0,0.853794,False,-0.0039,negligible,False,0.025,,,,41.04808

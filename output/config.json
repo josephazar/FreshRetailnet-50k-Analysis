@@ -1,6 +1,7 @@
 {
-  "N_SP": 5000,
-  "N_CLUSTERS": 25,
+  "N_SP": 50000,
+  "N_SP_setting": 0,
+  "N_CLUSTERS": 50,
   "LGB_BASE": {
     "boosting_type": "gbdt",
     "num_leaves": 255,

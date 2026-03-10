@@ -1,0 +1,72 @@
+{
+  "No Recovery": {
+    "MAE": 0.2495,
+    "RMSE": 0.4181,
+    "SMAPE": 32.59,
+    "Corr": 0.979,
+    "Bias": 0.0464,
+    "WAPE": 20.64,
+    "WPE": 3.84,
+    "Decoupling": 0.3538,
+    "Recovery_Uplift_pct": -0.0,
+    "Recovery_Time_s": 0.0,
+    "DL_Train_Time_s": 0,
+    "Total_Time_s": 28.7
+  },
+  "Simple Mean": {
+    "MAE": 0.248,
+    "RMSE": 0.4165,
+    "SMAPE": 32.57,
+    "Corr": 0.9793,
+    "Bias": 0.0348,
+    "WAPE": 20.52,
+    "WPE": 2.88,
+    "Decoupling": 0.0,
+    "Recovery_Uplift_pct": 9.3,
+    "Recovery_Time_s": 0.0,
+    "DL_Train_Time_s": 0,
+    "Total_Time_s": 29.6
+  },
+  "Tobit/IMR": {
+    "MAE": 0.2498,
+    "RMSE": 0.4176,
+    "SMAPE": 32.72,
+    "Corr": 0.9789,
+    "Bias": 0.0235,
+    "WAPE": 20.67,
+    "WPE": 1.94,
+    "Decoupling": 0.4268,
+    "Recovery_Uplift_pct": 45.2,
+    "Recovery_Time_s": 0.3,
+    "DL_Train_Time_s": 0,
+    "Total_Time_s": 30.5
+  },
+  "SAITS": {
+    "MAE": 0.2504,
+    "RMSE": 0.418,
+    "SMAPE": 32.6,
+    "Corr": 0.979,
+    "Bias": 0.0355,
+    "WAPE": 20.71,
+    "WPE": 2.94,
+    "Decoupling": 0.274,
+    "Recovery_Uplift_pct": 5.4,
+    "Recovery_Time_s": 1128.0,
+    "DL_Train_Time_s": 1124.1,
+    "Total_Time_s": 1156.5
+  },
+  "TimesNet": {
+    "MAE": 0.2496,
+    "RMSE": 0.4175,
+    "SMAPE": 32.84,
+    "Corr": 0.9791,
+    "Bias": 0.0448,
+    "WAPE": 20.65,
+    "WPE": 3.71,
+    "Decoupling": 0.3026,
+    "Recovery_Uplift_pct": 14.0,
+    "Recovery_Time_s": 356.6,
+    "DL_Train_Time_s": 352.4,
+    "Total_Time_s": 385.5
+  }
+}
