@@ -1,0 +1,32 @@
+{
+  "software_release": "v1.0.0",
+  "args": {
+    "n_sp": 1500,
+    "out": "output/hyperparameter_grid",
+    "seed": 42
+  },
+  "protocol": "fold-causal validation with nested early stopping",
+  "purpose": "hyperparameter robustness only; validation-only; the reported configuration is not re-tuned and the held-out test set is never used",
+  "grid": {
+    "learning_rate": [
+      0.02,
+      0.03,
+      0.05
+    ],
+    "num_leaves": [
+      127,
+      255,
+      511
+    ]
+  },
+  "paper_config": {
+    "learning_rate": 0.03,
+    "num_leaves": 255
+  },
+  "pooled_folds": [
+    2,
+    3,
+    4
+  ],
+  "runtime_s_total": 1139.1
+}

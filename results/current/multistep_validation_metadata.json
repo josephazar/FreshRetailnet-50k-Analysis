@@ -1,0 +1,31 @@
+{
+  "script": "multistep_validation",
+  "software_release": "v1.0.0",
+  "protocol": "fold-causal multi-step validation with nested early stopping",
+  "config": {
+    "n_sp": 1500,
+    "out": "output/multistep_validation",
+    "seed": 42
+  },
+  "selection_rule": "lowest pooled multi-step validation WAPE over folds 2-4; every arm predicts each fold window 7 days ahead from the fold origin; recovery and FeatureBuilder refit per fold on data up to the fold train_end (fold-causal); boosting iterations chosen on an inner temporal split of the fold-training window (nested; outer fold untouched by training); recentering calibrators fit only on earlier folds (default config, sp_shrink=28, horizon_shrink=5000); fold 1 excluded from pooling (calibrator seed); eligible arms: A0, A1, A2, A3, A5; diagnostic-only: A4a, A4b (latent-demand heads)",
+  "promotion_gate": "incumbent = A3 (recursive + CV recentering); candidate promotes iff G1 pooled val WAPE < incumbent, G2 wins >= 2 of 3 pooled folds, G3 |pooled val WPE| <= incumbent + 1.0 pp, G4 runtime <= 3x incumbent; test never participates",
+  "candidate": "A5_direct_tweedie_recentered",
+  "gate": {
+    "G1_pooled_wape": true,
+    "G2_fold_wins": "3/3",
+    "G2_pass": true,
+    "G3_bias": false,
+    "G4_runtime": true
+  },
+  "candidate_minus_incumbent_wape_ci": {
+    "point_pp": -0.285,
+    "ci95_lo_pp": -0.458,
+    "ci95_hi_pp": -0.125,
+    "n_stores": 653,
+    "B": 2000,
+    "cluster": "store"
+  },
+  "headline_configuration": "A3_recursive_recentered",
+  "incumbent": "A3_recursive_recentered",
+  "runtime_s_total": 1862.5
+}

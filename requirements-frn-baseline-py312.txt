@@ -1,0 +1,13 @@
+## Optional: pyproject-friendly stack for Python >=3.11 baseline experiments.
+## Not a byte-identical match to the upstream Python 3.8 pins; use for Python 3.12 execution.
+
+torch>=2.1
+pytorch-lightning>=2.6
+pytorch-forecasting>=1.7
+datasets>=3.0
+pygrinder>=0.7
+tensorboard>=2.14
+h5py
+tsdb
+einops
+sympy>=1.12

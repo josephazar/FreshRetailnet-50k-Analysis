@@ -1,0 +1,14 @@
+{
+  "script": "parsimony_sweep",
+  "software_release": "v1.0.0",
+  "args": {
+    "n_sp": 1500,
+    "out": "output/parsimony",
+    "seed": 42
+  },
+  "protocol": "fold-causal validation with training-fold-only feature ranking",
+  "ranking_basis": "mean gain share, MAE/Huber/Q50 outer models, folds [1, 2, 3] only",
+  "family": "recursive 3-member ensemble (headline family), no recentering (orthogonal post-processing)",
+  "test_note": "test columns are transparency only; nothing is selected on test",
+  "runtime_s_total": 1719.3
+}

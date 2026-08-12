@@ -1,0 +1,28 @@
+{
+  "script": "headline_run",
+  "software_release": "v1.0.0",
+  "python": "3.12.1",
+  "numpy": "2.4.2",
+  "pandas": "3.0.1",
+  "lightgbm": "4.6.0",
+  "config": {
+    "n_sp": 0,
+    "out": "output/headline",
+    "seed": 42,
+    "arm": "A3_recursive_recentered"
+  },
+  "inventory_cfg": {
+    "h": 0.1,
+    "p": 0.5,
+    "w": 0.3,
+    "alpha": 0.95,
+    "shelf_life": 3,
+    "lead_time": 1,
+    "unit_revenue": 1.0,
+    "unit_cost": 0.4,
+    "saa_seed": 42
+  },
+  "runtime_s": 9219.716986894608,
+  "train_md5": "501f47af53495f01592ea8caf1c83978",
+  "eval_md5": "14878135c5b048d4e0dac44ae0282879"
+}

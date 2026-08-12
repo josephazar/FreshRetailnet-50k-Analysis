@@ -1,0 +1,14 @@
+## Optional: dependencies to reproduce frn-50k-baseline (Wang et al. TFT+TimesNet rerun)
+
+numpy==1.23.5
+pandas==1.5.3
+torch==2.0.1
+pytorch-lightning==1.9.4
+pytorch-forecasting==1.0.0
+datasets==3.1.0
+tensorboard==2.14.0
+pygrinder==0.4
+h5py==3.9.0
+tsdb==0.3.1
+einops==0.7.0
+sympy==1.12

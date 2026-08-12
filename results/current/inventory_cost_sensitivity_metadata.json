@@ -1,0 +1,31 @@
+{
+  "script": "cost_sensitivity",
+  "software_release": "v1.0.0",
+  "run_dir": "output/headline",
+  "source": "saved policy_orders.parquet; no policy re-estimation",
+  "selected_policy": "Q90 Direct",
+  "grid_p": [
+    0.3,
+    0.5,
+    0.7,
+    1.0
+  ],
+  "grid_w": [
+    0.1,
+    0.3,
+    0.5,
+    0.7
+  ],
+  "base_inventory_cfg": {
+    "h": 0.1,
+    "p": 0.5,
+    "w": 0.3,
+    "alpha": 0.95,
+    "shelf_life": 3,
+    "lead_time": 1,
+    "unit_revenue": 1.0,
+    "unit_cost": 0.4,
+    "saa_seed": 42
+  },
+  "runtime_s": 0.072
+}

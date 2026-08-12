@@ -1,0 +1,17 @@
+{
+  "software_release": "v1.0.0",
+  "nominal_interval_coverage": 0.8,
+  "overall_interval_coverage": 0.702706,
+  "median_quantile_frequency": 0.476177,
+  "by_horizon_day": {
+    "1": 0.73752,
+    "2": 0.72472,
+    "3": 0.74328,
+    "4": 0.69766,
+    "5": 0.61272,
+    "6": 0.71524,
+    "7": 0.6878
+  },
+  "n_rows": 350000,
+  "interpretation": "Observed Q10-Q90 coverage is below the nominal 80%; Q90 policy labels are not calibrated service guarantees."
+}

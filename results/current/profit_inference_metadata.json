@@ -1,0 +1,37 @@
+{
+  "script": "profit_inference",
+  "software_release": "v1.0.0",
+  "args": {
+    "run_dir": "output/headline",
+    "B": 10000,
+    "seed": 42
+  },
+  "cluster": "store (sp // 10000)",
+  "n_stores": 898,
+  "B": 10000,
+  "seed": 42,
+  "comparisons_family": [
+    "selected vs static baseline",
+    "selected vs naive forecast ordering",
+    "selected vs empirical newsvendor"
+  ],
+  "correction": "Holm, family of 3, two-sided",
+  "fill_rate_floor_sensitivity": {
+    "0.85": "Newsvendor-Normal (CR=0.579)",
+    "0.90": "Q90 Direct",
+    "0.95": "SS (0.75\u03c3)"
+  },
+  "inventory_cfg": {
+    "h": 0.1,
+    "p": 0.5,
+    "w": 0.3,
+    "alpha": 0.95,
+    "shelf_life": 3,
+    "lead_time": 1,
+    "unit_revenue": 1.0,
+    "unit_cost": 0.4,
+    "saa_seed": 42
+  },
+  "note": "profit is an observed-sales proxy under censored evaluation; direction of bias vs latent-demand profit is not identified; not a bound",
+  "runtime_s": 0.3
+}

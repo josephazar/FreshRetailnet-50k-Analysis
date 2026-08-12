@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite this repository and the accompanying manuscript metadata below."
+title: "Leak-Free Censored Demand Forecasting and Inventory Optimization on FreshRetailNet-50K"
+abstract: >-
+  Reproducible, leakage-free, end-to-end pipeline for censored-demand recovery,
+  gradient-boosted demand forecasting, and Newsvendor-family inventory
+  optimization on the FreshRetailNet-50K benchmark.
+type: software
+version: 1.0.0
+date-released: 2026-08-12
+authors:
+  - family-names: Azar
+    given-names: Joseph
+    affiliation: "Université Marie et Louis Pasteur, CNRS, FEMTO-ST Institute, Belfort, France"
+    email: joseph.azar@umlp.fr
+license: MIT
+repository-code: "https://github.com/josephazar/FreshRetailnet-50k-Analysis"
+keywords:
+  - censored demand
+  - demand forecasting
+  - inventory optimization
+  - newsvendor model
+  - gradient boosting
+  - perishable goods
+  - reproducibility
+preferred-citation:
+  type: article
+  title: "A Reproducible, Leakage-Free Pipeline for Censored Demand Forecasting and Inventory Optimization on FreshRetailNet-50K"
+  authors:
+    - family-names: Azar
+      given-names: Joseph
+  year: 2026

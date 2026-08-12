@@ -1,0 +1,35 @@
+{
+  "preselected_policy": "Q90 Direct",
+  "selection_criterion": "max Avg Profit s.t. Fill Rate >= 0.9",
+  "newsvendor_critical_ratio": {
+    "value": 0.578947,
+    "formula": "Cu/(Cu+Co), Cu=unit_revenue-unit_cost+p, Co=unit_cost+h+w (profit-optimal for the stated objective)"
+  },
+  "selection_basis": "last CV validation fold; selector calibrator, EmpNV residuals, and policy history statistics use data strictly before that fold",
+  "fill_rate_floor_sensitivity": {
+    "0.85": "Newsvendor-Normal (CR=0.579)",
+    "0.90": "Q90 Direct",
+    "0.95": "SS (0.75\u03c3)"
+  },
+  "residual_distribution_source": "cv_fold_validation residuals of the calibrated ensemble, cross-fitted (calibrator for fold f fit on folds < f); out-of-sample w.r.t. model training; recovery and FeatureBuilder are refit through each fold origin",
+  "forecast_calibration": {
+    "method": "cv_scale",
+    "sp_shrink": 28.0,
+    "horizon_shrink": 5000.0,
+    "artifact": "cv_scale_calibration.json",
+    "prediction_key_fit": "ensemble"
+  },
+  "validation_fold_metrics": {
+    "Avg Profit": 0.3114,
+    "Fill Rate": 0.9245,
+    "Waste%": 25.76,
+    "SO Rate": 0.2609
+  },
+  "test_metrics_reported": {
+    "Avg Profit": 0.2413,
+    "Fill Rate": 0.9564,
+    "Waste%": 31.37,
+    "SO Rate": 0.1622
+  },
+  "note": "profit is an observed-sales proxy under censored evaluation; direction of bias vs latent-demand profit is not identified"
+}

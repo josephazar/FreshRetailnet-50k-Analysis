@@ -1,0 +1,42 @@
+{
+  "software_release": "v1.0.0",
+  "headline_run": {
+    "arm": "A3_recursive_recentered",
+    "n_store_products": 50000,
+    "test_rows": 350000,
+    "forecast": {
+      "raw_wape_pct": 33.5411,
+      "raw_wpe_pct": -8.2306,
+      "calibrated_wape_pct": 32.7895,
+      "calibrated_wpe_pct": -2.6171,
+      "q10_q90_coverage_pct": 70.2706,
+      "q10_q90_nominal_pct": 80.0
+    },
+    "selection": {
+      "rule": "maximum validation-fold average profit subject to fill rate >= 0.90",
+      "selected_policy": "Q90 Direct",
+      "test_fill_rate": 0.9564,
+      "test_average_profit": 0.2413,
+      "profit_gain_over_static_pct": 46.17,
+      "paired_profit_difference_vs_static": {
+        "point": 0.07621,
+        "ci95": [0.071787, 0.081004],
+        "store_clusters": 898,
+        "bootstrap_resamples": 10000
+      }
+    },
+    "observed_sales_proxy": "Evaluation uses censored sales. The direction of profit bias relative to latent-demand profit is not identified.",
+    "newsvendor_critical_ratio": {
+      "value": 0.578947,
+      "formula": "Cu/(Cu+Co); Cu=r-c+p=1.1, Co=c+h+w=0.8"
+    }
+  },
+  "accuracy_ablation": {
+    "candidate": "A5_combo",
+    "candidate_pooled_wape_pct": 32.9596,
+    "incumbent_pooled_wape_pct": 33.245,
+    "candidate_minus_incumbent_ci95_pp": [-0.458, -0.125],
+    "decision": "A5 failed the fixed G3 bias gate; A3 was retained."
+  },
+  "artifact_scope": "Compact CSV and JSON evidence; use scripts/headline_run.py to regenerate excluded prediction and order files."
+}

@@ -1,0 +1,41 @@
+{
+  "script": "remeasure_recovery_runtime",
+  "software_release": "v1.0.0",
+  "n_sp": 2000,
+  "seed": 42,
+  "boundary": "recovery/imputation call only; deep imputers include their required panel training (fit+impute)",
+  "deep_config": {
+    "epochs": 10,
+    "batch_size": 32,
+    "device": "cpu",
+    "library": "pypots"
+  },
+  "machine": {
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "processor": "arm64"
+  },
+  "timings": {
+    "heuristic_imr": {
+      "median_s": 0.295,
+      "reps_s": [0.298, 0.292, 0.297, 0.295, 0.294]
+    },
+    "tobit_mle": {
+      "median_s": 6.2,
+      "reps_s": 1
+    },
+    "saits": {
+      "median_s": 23.0,
+      "reps_s": 1
+    },
+    "timesnet": {
+      "median_s": 531.1,
+      "reps_s": 1
+    }
+  },
+  "ratios_vs_imr": {
+    "heuristic_imr": 1.0,
+    "tobit_mle": 21.0,
+    "saits": 78.0,
+    "timesnet": 1800.3
+  }
+}

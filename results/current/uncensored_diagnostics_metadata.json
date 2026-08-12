@@ -1,0 +1,9 @@
+{
+  "script": "uncensored_diagnostics",
+  "software_release": "v1.0.0",
+  "args": {
+    "run_dir": "output/headline"
+  },
+  "note": "non-random diagnostic subsets: stockout exposure correlates with demand level and store practices; these figures are transparency diagnostics, not latent-demand validation and not bounds in either direction",
+  "runtime_s": 0.3
+}
