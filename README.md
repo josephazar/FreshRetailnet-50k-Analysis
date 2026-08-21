@@ -9,7 +9,7 @@ and evaluated on
 stock-status vectors.
 
 This repository contains the current implementation, tests, compact result
-artifacts, and reproducibility metadata for software release `v1.0.0`.
+artifacts, and reproducibility metadata for software release `v1.1.0`.
 
 ## Results
 

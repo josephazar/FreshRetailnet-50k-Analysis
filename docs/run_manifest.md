@@ -2,11 +2,13 @@
 
 This file documents the authoritative full-scale result bundle in
 `results/current/`. Outputs outside this bundle are not part of the public
-code companion.
+code companion. Release `v1.1.0` adds robustness diagnostics while preserving
+the headline outputs and their original `v1.0.0` execution provenance.
 
 | Field | Value |
 |---|---|
-| Software release | `v1.0.0` |
+| Code companion release | `v1.1.0` |
+| Headline run provenance | `v1.0.0` |
 | Execution date | 2026-08-12 |
 | Store-product series | 50,000 |
 | Test rows | 350,000 |
