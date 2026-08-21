@@ -16,9 +16,10 @@ This script tests whether the reversal is an artifact of composition:
                   window, so decile membership is a series-level property and
                   a series never splits across deciles.
   (b2) decile on  the same deciles rebuilt on each store-product's mean y_true
-       uncensored  over its ZERO-STOCKOUT rows only, a demand basis that no
-       basis       stockout on that series can depress. This is the stricter
-                   control: the (b) basis is itself computed over censored rows.
+       uncensored  over its ZERO-STOCKOUT rows only, so no truncated value
+       basis       enters the basis. Which days are uncensored is itself a
+                   non-random selection, so this complements rather than
+                   supersedes (b), whose basis is computed over censored rows.
   (c) date        the same within each test date, controlling for day effects.
   (d) paired      a within-store-product comparison restricted to series that
                   contain BOTH 0h and light rows, which removes between-series
@@ -178,8 +179,10 @@ def main() -> None:
     # The basis in (b) is each series' mean observed sales over the whole test
     # window, which stockouts themselves depress, so conditioning on it does not
     # cleanly control for demand level. Here the deciles are rebuilt on each
-    # series' mean over its ZERO-STOCKOUT rows only, a quantity no stockout on
-    # that series can lower. Series with no zero-stockout row cannot be placed
+    # series' mean over its ZERO-STOCKOUT rows only, so no truncated value
+    # enters the basis; which days are uncensored is itself non-random (a
+    # stockout can remove a high-demand day from the mean), so this basis
+    # complements the one in (b). Series with no zero-stockout row cannot be placed
     # on this basis and are excluded; the excluded count is emitted so the
     # restriction is visible in the artifact rather than only in the code.
     sp_mean_unc = df[df['stratum'] == '0h'].groupby('sp')['y_true'].mean()
