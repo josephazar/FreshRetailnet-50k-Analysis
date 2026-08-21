@@ -1,0 +1,20 @@
+{
+  "script": "stratum_robustness",
+  "git_sha": "3604585c49022eebfb50a19855c2db4454e484ea",
+  "args": {
+    "preds": "output_v5_headline/predictions.csv",
+    "out": "results/current"
+  },
+  "model": "ensemble",
+  "prediction_column": "pred_ensemble",
+  "prediction_column_note": "the calibrated ensemble column; predictions.csv also carries pred_ensemble_raw, on which the light-below-0h reversal also holds",
+  "strata": {
+    "0h": "stockout_hours == 0",
+    "light": "1 <= h <= 4",
+    "heavy": "h >= 5"
+  },
+  "wape_definition": "100 * sum|pred - y| / sum(y)",
+  "headline_finding": "error is not monotonic in stockout exposure: light < 0h < heavy overall (26.9151 < 29.3556 < 46.8522 WAPE), the light-below-0h reversal holds in 10/10 demand deciles (10/10 on a zero-stockout-only demand basis) and on 6/7 test dates, and within the 28803 store-products measured in both strata light is lower for 56.0% (median paired difference -3.0615 WAPE points)",
+  "note": "strata are NON-RANDOM subsets: stockout exposure correlates with demand level, promotions, and store practices. These figures characterize where the pooled error comes from; they do not validate latent-demand accuracy and are not bounds in either direction. The reversal refutes a monotone protocol-only reading of the 0h stratum, it does not establish a causal account of its own.",
+  "runtime_s": 0.3
+}

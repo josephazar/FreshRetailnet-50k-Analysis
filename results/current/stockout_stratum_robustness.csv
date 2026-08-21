@@ -1,0 +1,551 @@
+analysis,group_key,group_detail,stratum,metric,value
+overall,all,"all 350,000 evaluation rows of the headline ensemble forecast",all,n_rows,350000
+overall,all,"all 350,000 evaluation rows of the headline ensemble forecast",all,n_sp,50000
+overall,all,"all 350,000 evaluation rows of the headline ensemble forecast",all,mean_y,1.19305
+overall,all,"all 350,000 evaluation rows of the headline ensemble forecast",0h,n_rows,206562
+overall,all,"all 350,000 evaluation rows of the headline ensemble forecast",0h,mean_y,1.23712
+overall,all,"all 350,000 evaluation rows of the headline ensemble forecast",0h,wape_pct,29.3556
+overall,all,"all 350,000 evaluation rows of the headline ensemble forecast",0h,wpe_pct,-4.67905
+overall,all,"all 350,000 evaluation rows of the headline ensemble forecast",light,n_rows,46283
+overall,all,"all 350,000 evaluation rows of the headline ensemble forecast",light,mean_y,1.51835
+overall,all,"all 350,000 evaluation rows of the headline ensemble forecast",light,wape_pct,26.9151
+overall,all,"all 350,000 evaluation rows of the headline ensemble forecast",light,wpe_pct,-15.4594
+overall,all,"all 350,000 evaluation rows of the headline ensemble forecast",heavy,n_rows,97155
+overall,all,"all 350,000 evaluation rows of the headline ensemble forecast",heavy,mean_y,0.944403
+overall,all,"all 350,000 evaluation rows of the headline ensemble forecast",heavy,wape_pct,46.8522
+overall,all,"all 350,000 evaluation rows of the headline ensemble forecast",heavy,wpe_pct,12.9616
+overall,all,"all 350,000 evaluation rows of the headline ensemble forecast",light_vs_0h,wape_minus_0h_pp,-2.44055
+overall,all,"all 350,000 evaluation rows of the headline ensemble forecast",light_vs_0h,lower_wape_than_0h_flag,1
+overall,all,"all 350,000 evaluation rows of the headline ensemble forecast",heavy_vs_0h,wape_minus_0h_pp,17.4966
+overall,all,"all 350,000 evaluation rows of the headline ensemble forecast",heavy_vs_0h,lower_wape_than_0h_flag,0
+decile,1,"decile 1/10 of series-level mean y_true, range [0.0000, 0.3857]",all,n_sp,5063
+decile,1,"decile 1/10 of series-level mean y_true, range [0.0000, 0.3857]",all,series_mean_y_min,0
+decile,1,"decile 1/10 of series-level mean y_true, range [0.0000, 0.3857]",all,series_mean_y_max,0.385714
+decile,1,"decile 1/10 of series-level mean y_true, range [0.0000, 0.3857]",0h,n_rows,20435
+decile,1,"decile 1/10 of series-level mean y_true, range [0.0000, 0.3857]",0h,mean_y,0.29853
+decile,1,"decile 1/10 of series-level mean y_true, range [0.0000, 0.3857]",0h,wape_pct,64.3535
+decile,1,"decile 1/10 of series-level mean y_true, range [0.0000, 0.3857]",0h,wpe_pct,34.1767
+decile,1,"decile 1/10 of series-level mean y_true, range [0.0000, 0.3857]",light,n_rows,3412
+decile,1,"decile 1/10 of series-level mean y_true, range [0.0000, 0.3857]",light,mean_y,0.413256
+decile,1,"decile 1/10 of series-level mean y_true, range [0.0000, 0.3857]",light,wape_pct,40.1563
+decile,1,"decile 1/10 of series-level mean y_true, range [0.0000, 0.3857]",light,wpe_pct,-5.53671
+decile,1,"decile 1/10 of series-level mean y_true, range [0.0000, 0.3857]",heavy,n_rows,11594
+decile,1,"decile 1/10 of series-level mean y_true, range [0.0000, 0.3857]",heavy,mean_y,0.253938
+decile,1,"decile 1/10 of series-level mean y_true, range [0.0000, 0.3857]",heavy,wape_pct,96.7692
+decile,1,"decile 1/10 of series-level mean y_true, range [0.0000, 0.3857]",heavy,wpe_pct,59.6571
+decile,1,"decile 1/10 of series-level mean y_true, range [0.0000, 0.3857]",light_vs_0h,wape_minus_0h_pp,-24.1972
+decile,1,"decile 1/10 of series-level mean y_true, range [0.0000, 0.3857]",light_vs_0h,lower_wape_than_0h_flag,1
+decile,1,"decile 1/10 of series-level mean y_true, range [0.0000, 0.3857]",heavy_vs_0h,wape_minus_0h_pp,32.4157
+decile,1,"decile 1/10 of series-level mean y_true, range [0.0000, 0.3857]",heavy_vs_0h,lower_wape_than_0h_flag,0
+decile,2,"decile 2/10 of series-level mean y_true, range [0.3857, 0.4857]",all,n_sp,4976
+decile,2,"decile 2/10 of series-level mean y_true, range [0.3857, 0.4857]",all,series_mean_y_min,0.385714
+decile,2,"decile 2/10 of series-level mean y_true, range [0.3857, 0.4857]",all,series_mean_y_max,0.485714
+decile,2,"decile 2/10 of series-level mean y_true, range [0.3857, 0.4857]",0h,n_rows,21496
+decile,2,"decile 2/10 of series-level mean y_true, range [0.3857, 0.4857]",0h,mean_y,0.429231
+decile,2,"decile 2/10 of series-level mean y_true, range [0.3857, 0.4857]",0h,wape_pct,46.7851
+decile,2,"decile 2/10 of series-level mean y_true, range [0.3857, 0.4857]",0h,wpe_pct,15.9446
+decile,2,"decile 2/10 of series-level mean y_true, range [0.3857, 0.4857]",light,n_rows,3837
+decile,2,"decile 2/10 of series-level mean y_true, range [0.3857, 0.4857]",light,mean_y,0.550722
+decile,2,"decile 2/10 of series-level mean y_true, range [0.3857, 0.4857]",light,wape_pct,34.345
+decile,2,"decile 2/10 of series-level mean y_true, range [0.3857, 0.4857]",light,wpe_pct,-13.2727
+decile,2,"decile 2/10 of series-level mean y_true, range [0.3857, 0.4857]",heavy,n_rows,9499
+decile,2,"decile 2/10 of series-level mean y_true, range [0.3857, 0.4857]",heavy,mean_y,0.421379
+decile,2,"decile 2/10 of series-level mean y_true, range [0.3857, 0.4857]",heavy,wape_pct,58.1869
+decile,2,"decile 2/10 of series-level mean y_true, range [0.3857, 0.4857]",heavy,wpe_pct,17.5783
+decile,2,"decile 2/10 of series-level mean y_true, range [0.3857, 0.4857]",light_vs_0h,wape_minus_0h_pp,-12.4401
+decile,2,"decile 2/10 of series-level mean y_true, range [0.3857, 0.4857]",light_vs_0h,lower_wape_than_0h_flag,1
+decile,2,"decile 2/10 of series-level mean y_true, range [0.3857, 0.4857]",heavy_vs_0h,wape_minus_0h_pp,11.4017
+decile,2,"decile 2/10 of series-level mean y_true, range [0.3857, 0.4857]",heavy_vs_0h,lower_wape_than_0h_flag,0
+decile,3,"decile 3/10 of series-level mean y_true, range [0.4857, 0.5714]",all,n_sp,5038
+decile,3,"decile 3/10 of series-level mean y_true, range [0.4857, 0.5714]",all,series_mean_y_min,0.485714
+decile,3,"decile 3/10 of series-level mean y_true, range [0.4857, 0.5714]",all,series_mean_y_max,0.571429
+decile,3,"decile 3/10 of series-level mean y_true, range [0.4857, 0.5714]",0h,n_rows,21674
+decile,3,"decile 3/10 of series-level mean y_true, range [0.4857, 0.5714]",0h,mean_y,0.516401
+decile,3,"decile 3/10 of series-level mean y_true, range [0.4857, 0.5714]",0h,wape_pct,40.6148
+decile,3,"decile 3/10 of series-level mean y_true, range [0.4857, 0.5714]",0h,wpe_pct,7.41836
+decile,3,"decile 3/10 of series-level mean y_true, range [0.4857, 0.5714]",light,n_rows,4265
+decile,3,"decile 3/10 of series-level mean y_true, range [0.4857, 0.5714]",light,mean_y,0.64657
+decile,3,"decile 3/10 of series-level mean y_true, range [0.4857, 0.5714]",light,wape_pct,33.4613
+decile,3,"decile 3/10 of series-level mean y_true, range [0.4857, 0.5714]",light,wpe_pct,-17.9666
+decile,3,"decile 3/10 of series-level mean y_true, range [0.4857, 0.5714]",heavy,n_rows,9327
+decile,3,"decile 3/10 of series-level mean y_true, range [0.4857, 0.5714]",heavy,mean_y,0.504256
+decile,3,"decile 3/10 of series-level mean y_true, range [0.4857, 0.5714]",heavy,wape_pct,50.4371
+decile,3,"decile 3/10 of series-level mean y_true, range [0.4857, 0.5714]",heavy,wpe_pct,8.75361
+decile,3,"decile 3/10 of series-level mean y_true, range [0.4857, 0.5714]",light_vs_0h,wape_minus_0h_pp,-7.15351
+decile,3,"decile 3/10 of series-level mean y_true, range [0.4857, 0.5714]",light_vs_0h,lower_wape_than_0h_flag,1
+decile,3,"decile 3/10 of series-level mean y_true, range [0.4857, 0.5714]",heavy_vs_0h,wape_minus_0h_pp,9.8223
+decile,3,"decile 3/10 of series-level mean y_true, range [0.4857, 0.5714]",heavy_vs_0h,lower_wape_than_0h_flag,0
+decile,4,"decile 4/10 of series-level mean y_true, range [0.5714, 0.6571]",all,n_sp,4970
+decile,4,"decile 4/10 of series-level mean y_true, range [0.5714, 0.6571]",all,series_mean_y_min,0.571429
+decile,4,"decile 4/10 of series-level mean y_true, range [0.5714, 0.6571]",all,series_mean_y_max,0.657143
+decile,4,"decile 4/10 of series-level mean y_true, range [0.5714, 0.6571]",0h,n_rows,21262
+decile,4,"decile 4/10 of series-level mean y_true, range [0.5714, 0.6571]",0h,mean_y,0.604381
+decile,4,"decile 4/10 of series-level mean y_true, range [0.5714, 0.6571]",0h,wape_pct,37.8461
+decile,4,"decile 4/10 of series-level mean y_true, range [0.5714, 0.6571]",0h,wpe_pct,2.965
+decile,4,"decile 4/10 of series-level mean y_true, range [0.5714, 0.6571]",light,n_rows,4247
+decile,4,"decile 4/10 of series-level mean y_true, range [0.5714, 0.6571]",light,mean_y,0.74022
+decile,4,"decile 4/10 of series-level mean y_true, range [0.5714, 0.6571]",light,wape_pct,33.5272
+decile,4,"decile 4/10 of series-level mean y_true, range [0.5714, 0.6571]",light,wpe_pct,-20.1076
+decile,4,"decile 4/10 of series-level mean y_true, range [0.5714, 0.6571]",heavy,n_rows,9281
+decile,4,"decile 4/10 of series-level mean y_true, range [0.5714, 0.6571]",heavy,mean_y,0.583041
+decile,4,"decile 4/10 of series-level mean y_true, range [0.5714, 0.6571]",heavy,wape_pct,47.7894
+decile,4,"decile 4/10 of series-level mean y_true, range [0.5714, 0.6571]",heavy,wpe_pct,5.70195
+decile,4,"decile 4/10 of series-level mean y_true, range [0.5714, 0.6571]",light_vs_0h,wape_minus_0h_pp,-4.31886
+decile,4,"decile 4/10 of series-level mean y_true, range [0.5714, 0.6571]",light_vs_0h,lower_wape_than_0h_flag,1
+decile,4,"decile 4/10 of series-level mean y_true, range [0.5714, 0.6571]",heavy_vs_0h,wape_minus_0h_pp,9.94338
+decile,4,"decile 4/10 of series-level mean y_true, range [0.5714, 0.6571]",heavy_vs_0h,lower_wape_than_0h_flag,0
+decile,5,"decile 5/10 of series-level mean y_true, range [0.6571, 0.7714]",all,n_sp,4954
+decile,5,"decile 5/10 of series-level mean y_true, range [0.6571, 0.7714]",all,series_mean_y_min,0.657143
+decile,5,"decile 5/10 of series-level mean y_true, range [0.6571, 0.7714]",all,series_mean_y_max,0.771429
+decile,5,"decile 5/10 of series-level mean y_true, range [0.6571, 0.7714]",0h,n_rows,20890
+decile,5,"decile 5/10 of series-level mean y_true, range [0.6571, 0.7714]",0h,mean_y,0.704892
+decile,5,"decile 5/10 of series-level mean y_true, range [0.6571, 0.7714]",0h,wape_pct,35.804
+decile,5,"decile 5/10 of series-level mean y_true, range [0.6571, 0.7714]",0h,wpe_pct,-0.835432
+decile,5,"decile 5/10 of series-level mean y_true, range [0.6571, 0.7714]",light,n_rows,4309
+decile,5,"decile 5/10 of series-level mean y_true, range [0.6571, 0.7714]",light,mean_y,0.857587
+decile,5,"decile 5/10 of series-level mean y_true, range [0.6571, 0.7714]",light,wape_pct,33.2158
+decile,5,"decile 5/10 of series-level mean y_true, range [0.6571, 0.7714]",light,wpe_pct,-21.8732
+decile,5,"decile 5/10 of series-level mean y_true, range [0.6571, 0.7714]",heavy,n_rows,9479
+decile,5,"decile 5/10 of series-level mean y_true, range [0.6571, 0.7714]",heavy,mean_y,0.662306
+decile,5,"decile 5/10 of series-level mean y_true, range [0.6571, 0.7714]",heavy,wape_pct,47.806
+decile,5,"decile 5/10 of series-level mean y_true, range [0.6571, 0.7714]",heavy,wpe_pct,5.46456
+decile,5,"decile 5/10 of series-level mean y_true, range [0.6571, 0.7714]",light_vs_0h,wape_minus_0h_pp,-2.58821
+decile,5,"decile 5/10 of series-level mean y_true, range [0.6571, 0.7714]",light_vs_0h,lower_wape_than_0h_flag,1
+decile,5,"decile 5/10 of series-level mean y_true, range [0.6571, 0.7714]",heavy_vs_0h,wape_minus_0h_pp,12.002
+decile,5,"decile 5/10 of series-level mean y_true, range [0.6571, 0.7714]",heavy_vs_0h,lower_wape_than_0h_flag,0
+decile,6,"decile 6/10 of series-level mean y_true, range [0.7714, 0.9000]",all,n_sp,5005
+decile,6,"decile 6/10 of series-level mean y_true, range [0.7714, 0.9000]",all,series_mean_y_min,0.771429
+decile,6,"decile 6/10 of series-level mean y_true, range [0.7714, 0.9000]",all,series_mean_y_max,0.9
+decile,6,"decile 6/10 of series-level mean y_true, range [0.7714, 0.9000]",0h,n_rows,20293
+decile,6,"decile 6/10 of series-level mean y_true, range [0.7714, 0.9000]",0h,mean_y,0.830574
+decile,6,"decile 6/10 of series-level mean y_true, range [0.7714, 0.9000]",0h,wape_pct,34.228
+decile,6,"decile 6/10 of series-level mean y_true, range [0.7714, 0.9000]",0h,wpe_pct,-4.28576
+decile,6,"decile 6/10 of series-level mean y_true, range [0.7714, 0.9000]",light,n_rows,4803
+decile,6,"decile 6/10 of series-level mean y_true, range [0.7714, 0.9000]",light,mean_y,0.982181
+decile,6,"decile 6/10 of series-level mean y_true, range [0.7714, 0.9000]",light,wape_pct,31.7476
+decile,6,"decile 6/10 of series-level mean y_true, range [0.7714, 0.9000]",light,wpe_pct,-22.0197
+decile,6,"decile 6/10 of series-level mean y_true, range [0.7714, 0.9000]",heavy,n_rows,9939
+decile,6,"decile 6/10 of series-level mean y_true, range [0.7714, 0.9000]",heavy,mean_y,0.759421
+decile,6,"decile 6/10 of series-level mean y_true, range [0.7714, 0.9000]",heavy,wape_pct,48.4707
+decile,6,"decile 6/10 of series-level mean y_true, range [0.7714, 0.9000]",heavy,wpe_pct,6.95526
+decile,6,"decile 6/10 of series-level mean y_true, range [0.7714, 0.9000]",light_vs_0h,wape_minus_0h_pp,-2.48039
+decile,6,"decile 6/10 of series-level mean y_true, range [0.7714, 0.9000]",light_vs_0h,lower_wape_than_0h_flag,1
+decile,6,"decile 6/10 of series-level mean y_true, range [0.7714, 0.9000]",heavy_vs_0h,wape_minus_0h_pp,14.2427
+decile,6,"decile 6/10 of series-level mean y_true, range [0.7714, 0.9000]",heavy_vs_0h,lower_wape_than_0h_flag,0
+decile,7,"decile 7/10 of series-level mean y_true, range [0.9000, 1.1000]",all,n_sp,4995
+decile,7,"decile 7/10 of series-level mean y_true, range [0.9000, 1.1000]",all,series_mean_y_min,0.9
+decile,7,"decile 7/10 of series-level mean y_true, range [0.9000, 1.1000]",all,series_mean_y_max,1.1
+decile,7,"decile 7/10 of series-level mean y_true, range [0.9000, 1.1000]",0h,n_rows,19999
+decile,7,"decile 7/10 of series-level mean y_true, range [0.9000, 1.1000]",0h,mean_y,1.00284
+decile,7,"decile 7/10 of series-level mean y_true, range [0.9000, 1.1000]",0h,wape_pct,32.6391
+decile,7,"decile 7/10 of series-level mean y_true, range [0.9000, 1.1000]",0h,wpe_pct,-7.09292
+decile,7,"decile 7/10 of series-level mean y_true, range [0.9000, 1.1000]",light,n_rows,4953
+decile,7,"decile 7/10 of series-level mean y_true, range [0.9000, 1.1000]",light,mean_y,1.15195
+decile,7,"decile 7/10 of series-level mean y_true, range [0.9000, 1.1000]",light,wape_pct,31.2052
+decile,7,"decile 7/10 of series-level mean y_true, range [0.9000, 1.1000]",light,wpe_pct,-22.1063
+decile,7,"decile 7/10 of series-level mean y_true, range [0.9000, 1.1000]",heavy,n_rows,10013
+decile,7,"decile 7/10 of series-level mean y_true, range [0.9000, 1.1000]",heavy,mean_y,0.894045
+decile,7,"decile 7/10 of series-level mean y_true, range [0.9000, 1.1000]",heavy,wape_pct,47.9524
+decile,7,"decile 7/10 of series-level mean y_true, range [0.9000, 1.1000]",heavy,wpe_pct,7.37715
+decile,7,"decile 7/10 of series-level mean y_true, range [0.9000, 1.1000]",light_vs_0h,wape_minus_0h_pp,-1.43394
+decile,7,"decile 7/10 of series-level mean y_true, range [0.9000, 1.1000]",light_vs_0h,lower_wape_than_0h_flag,1
+decile,7,"decile 7/10 of series-level mean y_true, range [0.9000, 1.1000]",heavy_vs_0h,wape_minus_0h_pp,15.3132
+decile,7,"decile 7/10 of series-level mean y_true, range [0.9000, 1.1000]",heavy_vs_0h,lower_wape_than_0h_flag,0
+decile,8,"decile 8/10 of series-level mean y_true, range [1.1000, 1.4414]",all,n_sp,4999
+decile,8,"decile 8/10 of series-level mean y_true, range [1.1000, 1.4414]",all,series_mean_y_min,1.1
+decile,8,"decile 8/10 of series-level mean y_true, range [1.1000, 1.4414]",all,series_mean_y_max,1.44143
+decile,8,"decile 8/10 of series-level mean y_true, range [1.1000, 1.4414]",0h,n_rows,19772
+decile,8,"decile 8/10 of series-level mean y_true, range [1.1000, 1.4414]",0h,mean_y,1.27134
+decile,8,"decile 8/10 of series-level mean y_true, range [1.1000, 1.4414]",0h,wape_pct,31.3512
+decile,8,"decile 8/10 of series-level mean y_true, range [1.1000, 1.4414]",0h,wpe_pct,-8.34464
+decile,8,"decile 8/10 of series-level mean y_true, range [1.1000, 1.4414]",light,n_rows,5263
+decile,8,"decile 8/10 of series-level mean y_true, range [1.1000, 1.4414]",light,mean_y,1.439
+decile,8,"decile 8/10 of series-level mean y_true, range [1.1000, 1.4414]",light,wape_pct,30.0944
+decile,8,"decile 8/10 of series-level mean y_true, range [1.1000, 1.4414]",light,wpe_pct,-22.0212
+decile,8,"decile 8/10 of series-level mean y_true, range [1.1000, 1.4414]",heavy,n_rows,9958
+decile,8,"decile 8/10 of series-level mean y_true, range [1.1000, 1.4414]",heavy,mean_y,1.10038
+decile,8,"decile 8/10 of series-level mean y_true, range [1.1000, 1.4414]",heavy,wape_pct,47.3357
+decile,8,"decile 8/10 of series-level mean y_true, range [1.1000, 1.4414]",heavy,wpe_pct,9.10466
+decile,8,"decile 8/10 of series-level mean y_true, range [1.1000, 1.4414]",light_vs_0h,wape_minus_0h_pp,-1.25685
+decile,8,"decile 8/10 of series-level mean y_true, range [1.1000, 1.4414]",light_vs_0h,lower_wape_than_0h_flag,1
+decile,8,"decile 8/10 of series-level mean y_true, range [1.1000, 1.4414]",heavy_vs_0h,wape_minus_0h_pp,15.9845
+decile,8,"decile 8/10 of series-level mean y_true, range [1.1000, 1.4414]",heavy_vs_0h,lower_wape_than_0h_flag,0
+decile,9,"decile 9/10 of series-level mean y_true, range [1.4429, 2.2429]",all,n_sp,5003
+decile,9,"decile 9/10 of series-level mean y_true, range [1.4429, 2.2429]",all,series_mean_y_min,1.44286
+decile,9,"decile 9/10 of series-level mean y_true, range [1.4429, 2.2429]",all,series_mean_y_max,2.24286
+decile,9,"decile 9/10 of series-level mean y_true, range [1.4429, 2.2429]",0h,n_rows,20504
+decile,9,"decile 9/10 of series-level mean y_true, range [1.4429, 2.2429]",0h,mean_y,1.81912
+decile,9,"decile 9/10 of series-level mean y_true, range [1.4429, 2.2429]",0h,wape_pct,28.0155
+decile,9,"decile 9/10 of series-level mean y_true, range [1.4429, 2.2429]",0h,wpe_pct,-9.32349
+decile,9,"decile 9/10 of series-level mean y_true, range [1.4429, 2.2429]",light,n_rows,5163
+decile,9,"decile 9/10 of series-level mean y_true, range [1.4429, 2.2429]",light,mean_y,2.00508
+decile,9,"decile 9/10 of series-level mean y_true, range [1.4429, 2.2429]",light,wape_pct,27.6713
+decile,9,"decile 9/10 of series-level mean y_true, range [1.4429, 2.2429]",light,wpe_pct,-19.8569
+decile,9,"decile 9/10 of series-level mean y_true, range [1.4429, 2.2429]",heavy,n_rows,9354
+decile,9,"decile 9/10 of series-level mean y_true, range [1.4429, 2.2429]",heavy,mean_y,1.51576
+decile,9,"decile 9/10 of series-level mean y_true, range [1.4429, 2.2429]",heavy,wape_pct,44.0127
+decile,9,"decile 9/10 of series-level mean y_true, range [1.4429, 2.2429]",heavy,wpe_pct,10.7002
+decile,9,"decile 9/10 of series-level mean y_true, range [1.4429, 2.2429]",light_vs_0h,wape_minus_0h_pp,-0.344201
+decile,9,"decile 9/10 of series-level mean y_true, range [1.4429, 2.2429]",light_vs_0h,lower_wape_than_0h_flag,1
+decile,9,"decile 9/10 of series-level mean y_true, range [1.4429, 2.2429]",heavy_vs_0h,wape_minus_0h_pp,15.9972
+decile,9,"decile 9/10 of series-level mean y_true, range [1.4429, 2.2429]",heavy_vs_0h,lower_wape_than_0h_flag,0
+decile,10,"decile 10/10 of series-level mean y_true, range [2.2429, 40.9000]",all,n_sp,4997
+decile,10,"decile 10/10 of series-level mean y_true, range [2.2429, 40.9000]",all,series_mean_y_min,2.24286
+decile,10,"decile 10/10 of series-level mean y_true, range [2.2429, 40.9000]",all,series_mean_y_max,40.9
+decile,10,"decile 10/10 of series-level mean y_true, range [2.2429, 40.9000]",0h,n_rows,20237
+decile,10,"decile 10/10 of series-level mean y_true, range [2.2429, 40.9000]",0h,mean_y,5.04517
+decile,10,"decile 10/10 of series-level mean y_true, range [2.2429, 40.9000]",0h,wape_pct,21.0054
+decile,10,"decile 10/10 of series-level mean y_true, range [2.2429, 40.9000]",0h,wpe_pct,-8.69863
+decile,10,"decile 10/10 of series-level mean y_true, range [2.2429, 40.9000]",light,n_rows,6031
+decile,10,"decile 10/10 of series-level mean y_true, range [2.2429, 40.9000]",light,mean_y,4.77621
+decile,10,"decile 10/10 of series-level mean y_true, range [2.2429, 40.9000]",light,wape_pct,20.8164
+decile,10,"decile 10/10 of series-level mean y_true, range [2.2429, 40.9000]",light,wpe_pct,-8.83878
+decile,10,"decile 10/10 of series-level mean y_true, range [2.2429, 40.9000]",heavy,n_rows,8711
+decile,10,"decile 10/10 of series-level mean y_true, range [2.2429, 40.9000]",heavy,mean_y,3.07408
+decile,10,"decile 10/10 of series-level mean y_true, range [2.2429, 40.9000]",heavy,wape_pct,39.1089
+decile,10,"decile 10/10 of series-level mean y_true, range [2.2429, 40.9000]",heavy,wpe_pct,17.4366
+decile,10,"decile 10/10 of series-level mean y_true, range [2.2429, 40.9000]",light_vs_0h,wape_minus_0h_pp,-0.189006
+decile,10,"decile 10/10 of series-level mean y_true, range [2.2429, 40.9000]",light_vs_0h,lower_wape_than_0h_flag,1
+decile,10,"decile 10/10 of series-level mean y_true, range [2.2429, 40.9000]",heavy_vs_0h,wape_minus_0h_pp,18.1035
+decile,10,"decile 10/10 of series-level mean y_true, range [2.2429, 40.9000]",heavy_vs_0h,lower_wape_than_0h_flag,0
+decile,all,summary over all 10 demand deciles,light_vs_0h,n_groups,10
+decile,all,summary over all 10 demand deciles,light_vs_0h,n_groups_light_lower,10
+decile_uncensored_basis,1,"decile 1/10 of series-level mean y_true computed over zero-stockout rows only, range [0.0000, 0.3500]",all,n_sp,5001
+decile_uncensored_basis,1,"decile 1/10 of series-level mean y_true computed over zero-stockout rows only, range [0.0000, 0.3500]",all,series_mean_y_min,0
+decile_uncensored_basis,1,"decile 1/10 of series-level mean y_true computed over zero-stockout rows only, range [0.0000, 0.3500]",all,series_mean_y_max,0.35
+decile_uncensored_basis,1,"decile 1/10 of series-level mean y_true computed over zero-stockout rows only, range [0.0000, 0.3500]",0h,n_rows,19610
+decile_uncensored_basis,1,"decile 1/10 of series-level mean y_true computed over zero-stockout rows only, range [0.0000, 0.3500]",0h,mean_y,0.255106
+decile_uncensored_basis,1,"decile 1/10 of series-level mean y_true computed over zero-stockout rows only, range [0.0000, 0.3500]",0h,wape_pct,75.3255
+decile_uncensored_basis,1,"decile 1/10 of series-level mean y_true computed over zero-stockout rows only, range [0.0000, 0.3500]",0h,wpe_pct,54.1803
+decile_uncensored_basis,1,"decile 1/10 of series-level mean y_true computed over zero-stockout rows only, range [0.0000, 0.3500]",light,n_rows,4786
+decile_uncensored_basis,1,"decile 1/10 of series-level mean y_true computed over zero-stockout rows only, range [0.0000, 0.3500]",light,mean_y,0.544277
+decile_uncensored_basis,1,"decile 1/10 of series-level mean y_true computed over zero-stockout rows only, range [0.0000, 0.3500]",light,wape_pct,37.0862
+decile_uncensored_basis,1,"decile 1/10 of series-level mean y_true computed over zero-stockout rows only, range [0.0000, 0.3500]",light,wpe_pct,-17.5373
+decile_uncensored_basis,1,"decile 1/10 of series-level mean y_true computed over zero-stockout rows only, range [0.0000, 0.3500]",heavy,n_rows,10611
+decile_uncensored_basis,1,"decile 1/10 of series-level mean y_true computed over zero-stockout rows only, range [0.0000, 0.3500]",heavy,mean_y,0.440499
+decile_uncensored_basis,1,"decile 1/10 of series-level mean y_true computed over zero-stockout rows only, range [0.0000, 0.3500]",heavy,wape_pct,43.4079
+decile_uncensored_basis,1,"decile 1/10 of series-level mean y_true computed over zero-stockout rows only, range [0.0000, 0.3500]",heavy,wpe_pct,-5.66044
+decile_uncensored_basis,1,"decile 1/10 of series-level mean y_true computed over zero-stockout rows only, range [0.0000, 0.3500]",light_vs_0h,wape_minus_0h_pp,-38.2393
+decile_uncensored_basis,1,"decile 1/10 of series-level mean y_true computed over zero-stockout rows only, range [0.0000, 0.3500]",light_vs_0h,lower_wape_than_0h_flag,1
+decile_uncensored_basis,1,"decile 1/10 of series-level mean y_true computed over zero-stockout rows only, range [0.0000, 0.3500]",heavy_vs_0h,wape_minus_0h_pp,-31.9176
+decile_uncensored_basis,1,"decile 1/10 of series-level mean y_true computed over zero-stockout rows only, range [0.0000, 0.3500]",heavy_vs_0h,lower_wape_than_0h_flag,1
+decile_uncensored_basis,2,"decile 2/10 of series-level mean y_true computed over zero-stockout rows only, range [0.3500, 0.4514]",all,n_sp,4999
+decile_uncensored_basis,2,"decile 2/10 of series-level mean y_true computed over zero-stockout rows only, range [0.3500, 0.4514]",all,series_mean_y_min,0.35
+decile_uncensored_basis,2,"decile 2/10 of series-level mean y_true computed over zero-stockout rows only, range [0.3500, 0.4514]",all,series_mean_y_max,0.451429
+decile_uncensored_basis,2,"decile 2/10 of series-level mean y_true computed over zero-stockout rows only, range [0.3500, 0.4514]",0h,n_rows,21239
+decile_uncensored_basis,2,"decile 2/10 of series-level mean y_true computed over zero-stockout rows only, range [0.3500, 0.4514]",0h,mean_y,0.404095
+decile_uncensored_basis,2,"decile 2/10 of series-level mean y_true computed over zero-stockout rows only, range [0.3500, 0.4514]",0h,wape_pct,47.0472
+decile_uncensored_basis,2,"decile 2/10 of series-level mean y_true computed over zero-stockout rows only, range [0.3500, 0.4514]",0h,wpe_pct,22.0787
+decile_uncensored_basis,2,"decile 2/10 of series-level mean y_true computed over zero-stockout rows only, range [0.3500, 0.4514]",light,n_rows,4367
+decile_uncensored_basis,2,"decile 2/10 of series-level mean y_true computed over zero-stockout rows only, range [0.3500, 0.4514]",light,mean_y,0.646436
+decile_uncensored_basis,2,"decile 2/10 of series-level mean y_true computed over zero-stockout rows only, range [0.3500, 0.4514]",light,wape_pct,34.2362
+decile_uncensored_basis,2,"decile 2/10 of series-level mean y_true computed over zero-stockout rows only, range [0.3500, 0.4514]",light,wpe_pct,-19.8818
+decile_uncensored_basis,2,"decile 2/10 of series-level mean y_true computed over zero-stockout rows only, range [0.3500, 0.4514]",heavy,n_rows,9387
+decile_uncensored_basis,2,"decile 2/10 of series-level mean y_true computed over zero-stockout rows only, range [0.3500, 0.4514]",heavy,mean_y,0.520128
+decile_uncensored_basis,2,"decile 2/10 of series-level mean y_true computed over zero-stockout rows only, range [0.3500, 0.4514]",heavy,wape_pct,42.2233
+decile_uncensored_basis,2,"decile 2/10 of series-level mean y_true computed over zero-stockout rows only, range [0.3500, 0.4514]",heavy,wpe_pct,-3.46771
+decile_uncensored_basis,2,"decile 2/10 of series-level mean y_true computed over zero-stockout rows only, range [0.3500, 0.4514]",light_vs_0h,wape_minus_0h_pp,-12.811
+decile_uncensored_basis,2,"decile 2/10 of series-level mean y_true computed over zero-stockout rows only, range [0.3500, 0.4514]",light_vs_0h,lower_wape_than_0h_flag,1
+decile_uncensored_basis,2,"decile 2/10 of series-level mean y_true computed over zero-stockout rows only, range [0.3500, 0.4514]",heavy_vs_0h,wape_minus_0h_pp,-4.82391
+decile_uncensored_basis,2,"decile 2/10 of series-level mean y_true computed over zero-stockout rows only, range [0.3500, 0.4514]",heavy_vs_0h,lower_wape_than_0h_flag,1
+decile_uncensored_basis,3,"decile 3/10 of series-level mean y_true computed over zero-stockout rows only, range [0.4520, 0.5500]",all,n_sp,5059
+decile_uncensored_basis,3,"decile 3/10 of series-level mean y_true computed over zero-stockout rows only, range [0.4520, 0.5500]",all,series_mean_y_min,0.452
+decile_uncensored_basis,3,"decile 3/10 of series-level mean y_true computed over zero-stockout rows only, range [0.4520, 0.5500]",all,series_mean_y_max,0.55
+decile_uncensored_basis,3,"decile 3/10 of series-level mean y_true computed over zero-stockout rows only, range [0.4520, 0.5500]",0h,n_rows,22783
+decile_uncensored_basis,3,"decile 3/10 of series-level mean y_true computed over zero-stockout rows only, range [0.4520, 0.5500]",0h,mean_y,0.502595
+decile_uncensored_basis,3,"decile 3/10 of series-level mean y_true computed over zero-stockout rows only, range [0.4520, 0.5500]",0h,wape_pct,40.9967
+decile_uncensored_basis,3,"decile 3/10 of series-level mean y_true computed over zero-stockout rows only, range [0.4520, 0.5500]",0h,wpe_pct,11.029
+decile_uncensored_basis,3,"decile 3/10 of series-level mean y_true computed over zero-stockout rows only, range [0.4520, 0.5500]",light,n_rows,4082
+decile_uncensored_basis,3,"decile 3/10 of series-level mean y_true computed over zero-stockout rows only, range [0.4520, 0.5500]",light,mean_y,0.712023
+decile_uncensored_basis,3,"decile 3/10 of series-level mean y_true computed over zero-stockout rows only, range [0.4520, 0.5500]",light,wape_pct,33.8154
+decile_uncensored_basis,3,"decile 3/10 of series-level mean y_true computed over zero-stockout rows only, range [0.4520, 0.5500]",light,wpe_pct,-20.1752
+decile_uncensored_basis,3,"decile 3/10 of series-level mean y_true computed over zero-stockout rows only, range [0.4520, 0.5500]",heavy,n_rows,8548
+decile_uncensored_basis,3,"decile 3/10 of series-level mean y_true computed over zero-stockout rows only, range [0.4520, 0.5500]",heavy,mean_y,0.57089
+decile_uncensored_basis,3,"decile 3/10 of series-level mean y_true computed over zero-stockout rows only, range [0.4520, 0.5500]",heavy,wape_pct,41.9669
+decile_uncensored_basis,3,"decile 3/10 of series-level mean y_true computed over zero-stockout rows only, range [0.4520, 0.5500]",heavy,wpe_pct,-3.19686
+decile_uncensored_basis,3,"decile 3/10 of series-level mean y_true computed over zero-stockout rows only, range [0.4520, 0.5500]",light_vs_0h,wape_minus_0h_pp,-7.18129
+decile_uncensored_basis,3,"decile 3/10 of series-level mean y_true computed over zero-stockout rows only, range [0.4520, 0.5500]",light_vs_0h,lower_wape_than_0h_flag,1
+decile_uncensored_basis,3,"decile 3/10 of series-level mean y_true computed over zero-stockout rows only, range [0.4520, 0.5500]",heavy_vs_0h,wape_minus_0h_pp,0.970206
+decile_uncensored_basis,3,"decile 3/10 of series-level mean y_true computed over zero-stockout rows only, range [0.4520, 0.5500]",heavy_vs_0h,lower_wape_than_0h_flag,0
+decile_uncensored_basis,4,"decile 4/10 of series-level mean y_true computed over zero-stockout rows only, range [0.5500, 0.6500]",all,n_sp,4971
+decile_uncensored_basis,4,"decile 4/10 of series-level mean y_true computed over zero-stockout rows only, range [0.5500, 0.6500]",all,series_mean_y_min,0.55
+decile_uncensored_basis,4,"decile 4/10 of series-level mean y_true computed over zero-stockout rows only, range [0.5500, 0.6500]",all,series_mean_y_max,0.65
+decile_uncensored_basis,4,"decile 4/10 of series-level mean y_true computed over zero-stockout rows only, range [0.5500, 0.6500]",0h,n_rows,22093
+decile_uncensored_basis,4,"decile 4/10 of series-level mean y_true computed over zero-stockout rows only, range [0.5500, 0.6500]",0h,mean_y,0.598497
+decile_uncensored_basis,4,"decile 4/10 of series-level mean y_true computed over zero-stockout rows only, range [0.5500, 0.6500]",0h,wape_pct,37.1364
+decile_uncensored_basis,4,"decile 4/10 of series-level mean y_true computed over zero-stockout rows only, range [0.5500, 0.6500]",0h,wpe_pct,4.74749
+decile_uncensored_basis,4,"decile 4/10 of series-level mean y_true computed over zero-stockout rows only, range [0.5500, 0.6500]",light,n_rows,4028
+decile_uncensored_basis,4,"decile 4/10 of series-level mean y_true computed over zero-stockout rows only, range [0.5500, 0.6500]",light,mean_y,0.798742
+decile_uncensored_basis,4,"decile 4/10 of series-level mean y_true computed over zero-stockout rows only, range [0.5500, 0.6500]",light,wape_pct,33.3103
+decile_uncensored_basis,4,"decile 4/10 of series-level mean y_true computed over zero-stockout rows only, range [0.5500, 0.6500]",light,wpe_pct,-20.9589
+decile_uncensored_basis,4,"decile 4/10 of series-level mean y_true computed over zero-stockout rows only, range [0.5500, 0.6500]",heavy,n_rows,8676
+decile_uncensored_basis,4,"decile 4/10 of series-level mean y_true computed over zero-stockout rows only, range [0.5500, 0.6500]",heavy,mean_y,0.61774
+decile_uncensored_basis,4,"decile 4/10 of series-level mean y_true computed over zero-stockout rows only, range [0.5500, 0.6500]",heavy,wape_pct,42.7841
+decile_uncensored_basis,4,"decile 4/10 of series-level mean y_true computed over zero-stockout rows only, range [0.5500, 0.6500]",heavy,wpe_pct,-0.49075
+decile_uncensored_basis,4,"decile 4/10 of series-level mean y_true computed over zero-stockout rows only, range [0.5500, 0.6500]",light_vs_0h,wape_minus_0h_pp,-3.82613
+decile_uncensored_basis,4,"decile 4/10 of series-level mean y_true computed over zero-stockout rows only, range [0.5500, 0.6500]",light_vs_0h,lower_wape_than_0h_flag,1
+decile_uncensored_basis,4,"decile 4/10 of series-level mean y_true computed over zero-stockout rows only, range [0.5500, 0.6500]",heavy_vs_0h,wape_minus_0h_pp,5.64768
+decile_uncensored_basis,4,"decile 4/10 of series-level mean y_true computed over zero-stockout rows only, range [0.5500, 0.6500]",heavy_vs_0h,lower_wape_than_0h_flag,0
+decile_uncensored_basis,5,"decile 5/10 of series-level mean y_true computed over zero-stockout rows only, range [0.6500, 0.7667]",all,n_sp,5053
+decile_uncensored_basis,5,"decile 5/10 of series-level mean y_true computed over zero-stockout rows only, range [0.6500, 0.7667]",all,series_mean_y_min,0.65
+decile_uncensored_basis,5,"decile 5/10 of series-level mean y_true computed over zero-stockout rows only, range [0.6500, 0.7667]",all,series_mean_y_max,0.766667
+decile_uncensored_basis,5,"decile 5/10 of series-level mean y_true computed over zero-stockout rows only, range [0.6500, 0.7667]",0h,n_rows,21788
+decile_uncensored_basis,5,"decile 5/10 of series-level mean y_true computed over zero-stockout rows only, range [0.6500, 0.7667]",0h,mean_y,0.704896
+decile_uncensored_basis,5,"decile 5/10 of series-level mean y_true computed over zero-stockout rows only, range [0.6500, 0.7667]",0h,wape_pct,35.0636
+decile_uncensored_basis,5,"decile 5/10 of series-level mean y_true computed over zero-stockout rows only, range [0.6500, 0.7667]",0h,wpe_pct,-0.0578325
+decile_uncensored_basis,5,"decile 5/10 of series-level mean y_true computed over zero-stockout rows only, range [0.6500, 0.7667]",light,n_rows,4360
+decile_uncensored_basis,5,"decile 5/10 of series-level mean y_true computed over zero-stockout rows only, range [0.6500, 0.7667]",light,mean_y,0.890153
+decile_uncensored_basis,5,"decile 5/10 of series-level mean y_true computed over zero-stockout rows only, range [0.6500, 0.7667]",light,wape_pct,32.0449
+decile_uncensored_basis,5,"decile 5/10 of series-level mean y_true computed over zero-stockout rows only, range [0.6500, 0.7667]",light,wpe_pct,-21.3134
+decile_uncensored_basis,5,"decile 5/10 of series-level mean y_true computed over zero-stockout rows only, range [0.6500, 0.7667]",heavy,n_rows,9223
+decile_uncensored_basis,5,"decile 5/10 of series-level mean y_true computed over zero-stockout rows only, range [0.6500, 0.7667]",heavy,mean_y,0.666204
+decile_uncensored_basis,5,"decile 5/10 of series-level mean y_true computed over zero-stockout rows only, range [0.6500, 0.7667]",heavy,wape_pct,44.3435
+decile_uncensored_basis,5,"decile 5/10 of series-level mean y_true computed over zero-stockout rows only, range [0.6500, 0.7667]",heavy,wpe_pct,2.356
+decile_uncensored_basis,5,"decile 5/10 of series-level mean y_true computed over zero-stockout rows only, range [0.6500, 0.7667]",light_vs_0h,wape_minus_0h_pp,-3.01865
+decile_uncensored_basis,5,"decile 5/10 of series-level mean y_true computed over zero-stockout rows only, range [0.6500, 0.7667]",light_vs_0h,lower_wape_than_0h_flag,1
+decile_uncensored_basis,5,"decile 5/10 of series-level mean y_true computed over zero-stockout rows only, range [0.6500, 0.7667]",heavy_vs_0h,wape_minus_0h_pp,9.27992
+decile_uncensored_basis,5,"decile 5/10 of series-level mean y_true computed over zero-stockout rows only, range [0.6500, 0.7667]",heavy_vs_0h,lower_wape_than_0h_flag,0
+decile_uncensored_basis,6,"decile 6/10 of series-level mean y_true computed over zero-stockout rows only, range [0.7667, 0.9250]",all,n_sp,4917
+decile_uncensored_basis,6,"decile 6/10 of series-level mean y_true computed over zero-stockout rows only, range [0.7667, 0.9250]",all,series_mean_y_min,0.766667
+decile_uncensored_basis,6,"decile 6/10 of series-level mean y_true computed over zero-stockout rows only, range [0.7667, 0.9250]",all,series_mean_y_max,0.925
+decile_uncensored_basis,6,"decile 6/10 of series-level mean y_true computed over zero-stockout rows only, range [0.7667, 0.9250]",0h,n_rows,20327
+decile_uncensored_basis,6,"decile 6/10 of series-level mean y_true computed over zero-stockout rows only, range [0.7667, 0.9250]",0h,mean_y,0.841648
+decile_uncensored_basis,6,"decile 6/10 of series-level mean y_true computed over zero-stockout rows only, range [0.7667, 0.9250]",0h,wape_pct,33.1482
+decile_uncensored_basis,6,"decile 6/10 of series-level mean y_true computed over zero-stockout rows only, range [0.7667, 0.9250]",0h,wpe_pct,-3.97579
+decile_uncensored_basis,6,"decile 6/10 of series-level mean y_true computed over zero-stockout rows only, range [0.7667, 0.9250]",light,n_rows,4476
+decile_uncensored_basis,6,"decile 6/10 of series-level mean y_true computed over zero-stockout rows only, range [0.7667, 0.9250]",light,mean_y,1.02096
+decile_uncensored_basis,6,"decile 6/10 of series-level mean y_true computed over zero-stockout rows only, range [0.7667, 0.9250]",light,wape_pct,31.6238
+decile_uncensored_basis,6,"decile 6/10 of series-level mean y_true computed over zero-stockout rows only, range [0.7667, 0.9250]",light,wpe_pct,-21.68
+decile_uncensored_basis,6,"decile 6/10 of series-level mean y_true computed over zero-stockout rows only, range [0.7667, 0.9250]",heavy,n_rows,9616
+decile_uncensored_basis,6,"decile 6/10 of series-level mean y_true computed over zero-stockout rows only, range [0.7667, 0.9250]",heavy,mean_y,0.737195
+decile_uncensored_basis,6,"decile 6/10 of series-level mean y_true computed over zero-stockout rows only, range [0.7667, 0.9250]",heavy,wape_pct,45.7928
+decile_uncensored_basis,6,"decile 6/10 of series-level mean y_true computed over zero-stockout rows only, range [0.7667, 0.9250]",heavy,wpe_pct,5.76995
+decile_uncensored_basis,6,"decile 6/10 of series-level mean y_true computed over zero-stockout rows only, range [0.7667, 0.9250]",light_vs_0h,wape_minus_0h_pp,-1.52438
+decile_uncensored_basis,6,"decile 6/10 of series-level mean y_true computed over zero-stockout rows only, range [0.7667, 0.9250]",light_vs_0h,lower_wape_than_0h_flag,1
+decile_uncensored_basis,6,"decile 6/10 of series-level mean y_true computed over zero-stockout rows only, range [0.7667, 0.9250]",heavy_vs_0h,wape_minus_0h_pp,12.6446
+decile_uncensored_basis,6,"decile 6/10 of series-level mean y_true computed over zero-stockout rows only, range [0.7667, 0.9250]",heavy_vs_0h,lower_wape_than_0h_flag,0
+decile_uncensored_basis,7,"decile 7/10 of series-level mean y_true computed over zero-stockout rows only, range [0.9250, 1.1500]",all,n_sp,5030
+decile_uncensored_basis,7,"decile 7/10 of series-level mean y_true computed over zero-stockout rows only, range [0.9250, 1.1500]",all,series_mean_y_min,0.925
+decile_uncensored_basis,7,"decile 7/10 of series-level mean y_true computed over zero-stockout rows only, range [0.9250, 1.1500]",all,series_mean_y_max,1.15
+decile_uncensored_basis,7,"decile 7/10 of series-level mean y_true computed over zero-stockout rows only, range [0.9250, 1.1500]",0h,n_rows,20447
+decile_uncensored_basis,7,"decile 7/10 of series-level mean y_true computed over zero-stockout rows only, range [0.9250, 1.1500]",0h,mean_y,1.02949
+decile_uncensored_basis,7,"decile 7/10 of series-level mean y_true computed over zero-stockout rows only, range [0.9250, 1.1500]",0h,wape_pct,31.8033
+decile_uncensored_basis,7,"decile 7/10 of series-level mean y_true computed over zero-stockout rows only, range [0.9250, 1.1500]",0h,wpe_pct,-7.69367
+decile_uncensored_basis,7,"decile 7/10 of series-level mean y_true computed over zero-stockout rows only, range [0.9250, 1.1500]",light,n_rows,4744
+decile_uncensored_basis,7,"decile 7/10 of series-level mean y_true computed over zero-stockout rows only, range [0.9250, 1.1500]",light,mean_y,1.17374
+decile_uncensored_basis,7,"decile 7/10 of series-level mean y_true computed over zero-stockout rows only, range [0.9250, 1.1500]",light,wape_pct,30.5852
+decile_uncensored_basis,7,"decile 7/10 of series-level mean y_true computed over zero-stockout rows only, range [0.9250, 1.1500]",light,wpe_pct,-20.6237
+decile_uncensored_basis,7,"decile 7/10 of series-level mean y_true computed over zero-stockout rows only, range [0.9250, 1.1500]",heavy,n_rows,10019
+decile_uncensored_basis,7,"decile 7/10 of series-level mean y_true computed over zero-stockout rows only, range [0.9250, 1.1500]",heavy,mean_y,0.830053
+decile_uncensored_basis,7,"decile 7/10 of series-level mean y_true computed over zero-stockout rows only, range [0.9250, 1.1500]",heavy,wape_pct,46.4736
+decile_uncensored_basis,7,"decile 7/10 of series-level mean y_true computed over zero-stockout rows only, range [0.9250, 1.1500]",heavy,wpe_pct,8.11608
+decile_uncensored_basis,7,"decile 7/10 of series-level mean y_true computed over zero-stockout rows only, range [0.9250, 1.1500]",light_vs_0h,wape_minus_0h_pp,-1.21805
+decile_uncensored_basis,7,"decile 7/10 of series-level mean y_true computed over zero-stockout rows only, range [0.9250, 1.1500]",light_vs_0h,lower_wape_than_0h_flag,1
+decile_uncensored_basis,7,"decile 7/10 of series-level mean y_true computed over zero-stockout rows only, range [0.9250, 1.1500]",heavy_vs_0h,wape_minus_0h_pp,14.6704
+decile_uncensored_basis,7,"decile 7/10 of series-level mean y_true computed over zero-stockout rows only, range [0.9250, 1.1500]",heavy_vs_0h,lower_wape_than_0h_flag,0
+decile_uncensored_basis,8,"decile 8/10 of series-level mean y_true computed over zero-stockout rows only, range [1.1520, 1.5500]",all,n_sp,5038
+decile_uncensored_basis,8,"decile 8/10 of series-level mean y_true computed over zero-stockout rows only, range [1.1520, 1.5500]",all,series_mean_y_min,1.152
+decile_uncensored_basis,8,"decile 8/10 of series-level mean y_true computed over zero-stockout rows only, range [1.1520, 1.5500]",all,series_mean_y_max,1.55
+decile_uncensored_basis,8,"decile 8/10 of series-level mean y_true computed over zero-stockout rows only, range [1.1520, 1.5500]",0h,n_rows,19747
+decile_uncensored_basis,8,"decile 8/10 of series-level mean y_true computed over zero-stockout rows only, range [1.1520, 1.5500]",0h,mean_y,1.33193
+decile_uncensored_basis,8,"decile 8/10 of series-level mean y_true computed over zero-stockout rows only, range [1.1520, 1.5500]",0h,wape_pct,31.0514
+decile_uncensored_basis,8,"decile 8/10 of series-level mean y_true computed over zero-stockout rows only, range [1.1520, 1.5500]",0h,wpe_pct,-9.72645
+decile_uncensored_basis,8,"decile 8/10 of series-level mean y_true computed over zero-stockout rows only, range [1.1520, 1.5500]",light,n_rows,4814
+decile_uncensored_basis,8,"decile 8/10 of series-level mean y_true computed over zero-stockout rows only, range [1.1520, 1.5500]",light,mean_y,1.44866
+decile_uncensored_basis,8,"decile 8/10 of series-level mean y_true computed over zero-stockout rows only, range [1.1520, 1.5500]",light,wape_pct,29.4018
+decile_uncensored_basis,8,"decile 8/10 of series-level mean y_true computed over zero-stockout rows only, range [1.1520, 1.5500]",light,wpe_pct,-20.7473
+decile_uncensored_basis,8,"decile 8/10 of series-level mean y_true computed over zero-stockout rows only, range [1.1520, 1.5500]",heavy,n_rows,10705
+decile_uncensored_basis,8,"decile 8/10 of series-level mean y_true computed over zero-stockout rows only, range [1.1520, 1.5500]",heavy,mean_y,0.983546
+decile_uncensored_basis,8,"decile 8/10 of series-level mean y_true computed over zero-stockout rows only, range [1.1520, 1.5500]",heavy,wape_pct,49.0896
+decile_uncensored_basis,8,"decile 8/10 of series-level mean y_true computed over zero-stockout rows only, range [1.1520, 1.5500]",heavy,wpe_pct,12.5047
+decile_uncensored_basis,8,"decile 8/10 of series-level mean y_true computed over zero-stockout rows only, range [1.1520, 1.5500]",light_vs_0h,wape_minus_0h_pp,-1.6496
+decile_uncensored_basis,8,"decile 8/10 of series-level mean y_true computed over zero-stockout rows only, range [1.1520, 1.5500]",light_vs_0h,lower_wape_than_0h_flag,1
+decile_uncensored_basis,8,"decile 8/10 of series-level mean y_true computed over zero-stockout rows only, range [1.1520, 1.5500]",heavy_vs_0h,wape_minus_0h_pp,18.0382
+decile_uncensored_basis,8,"decile 8/10 of series-level mean y_true computed over zero-stockout rows only, range [1.1520, 1.5500]",heavy_vs_0h,lower_wape_than_0h_flag,0
+decile_uncensored_basis,9,"decile 9/10 of series-level mean y_true computed over zero-stockout rows only, range [1.5500, 2.4200]",all,n_sp,4935
+decile_uncensored_basis,9,"decile 9/10 of series-level mean y_true computed over zero-stockout rows only, range [1.5500, 2.4200]",all,series_mean_y_min,1.55
+decile_uncensored_basis,9,"decile 9/10 of series-level mean y_true computed over zero-stockout rows only, range [1.5500, 2.4200]",all,series_mean_y_max,2.42
+decile_uncensored_basis,9,"decile 9/10 of series-level mean y_true computed over zero-stockout rows only, range [1.5500, 2.4200]",0h,n_rows,19334
+decile_uncensored_basis,9,"decile 9/10 of series-level mean y_true computed over zero-stockout rows only, range [1.5500, 2.4200]",0h,mean_y,1.909
+decile_uncensored_basis,9,"decile 9/10 of series-level mean y_true computed over zero-stockout rows only, range [1.5500, 2.4200]",0h,wape_pct,27.914
+decile_uncensored_basis,9,"decile 9/10 of series-level mean y_true computed over zero-stockout rows only, range [1.5500, 2.4200]",0h,wpe_pct,-10.4498
+decile_uncensored_basis,9,"decile 9/10 of series-level mean y_true computed over zero-stockout rows only, range [1.5500, 2.4200]",light,n_rows,4760
+decile_uncensored_basis,9,"decile 9/10 of series-level mean y_true computed over zero-stockout rows only, range [1.5500, 2.4200]",light,mean_y,2.04118
+decile_uncensored_basis,9,"decile 9/10 of series-level mean y_true computed over zero-stockout rows only, range [1.5500, 2.4200]",light,wape_pct,27.3564
+decile_uncensored_basis,9,"decile 9/10 of series-level mean y_true computed over zero-stockout rows only, range [1.5500, 2.4200]",light,wpe_pct,-18.5234
+decile_uncensored_basis,9,"decile 9/10 of series-level mean y_true computed over zero-stockout rows only, range [1.5500, 2.4200]",heavy,n_rows,10451
+decile_uncensored_basis,9,"decile 9/10 of series-level mean y_true computed over zero-stockout rows only, range [1.5500, 2.4200]",heavy,mean_y,1.32498
+decile_uncensored_basis,9,"decile 9/10 of series-level mean y_true computed over zero-stockout rows only, range [1.5500, 2.4200]",heavy,wape_pct,48.946
+decile_uncensored_basis,9,"decile 9/10 of series-level mean y_true computed over zero-stockout rows only, range [1.5500, 2.4200]",heavy,wpe_pct,18.7715
+decile_uncensored_basis,9,"decile 9/10 of series-level mean y_true computed over zero-stockout rows only, range [1.5500, 2.4200]",light_vs_0h,wape_minus_0h_pp,-0.55757
+decile_uncensored_basis,9,"decile 9/10 of series-level mean y_true computed over zero-stockout rows only, range [1.5500, 2.4200]",light_vs_0h,lower_wape_than_0h_flag,1
+decile_uncensored_basis,9,"decile 9/10 of series-level mean y_true computed over zero-stockout rows only, range [1.5500, 2.4200]",heavy_vs_0h,wape_minus_0h_pp,21.032
+decile_uncensored_basis,9,"decile 9/10 of series-level mean y_true computed over zero-stockout rows only, range [1.5500, 2.4200]",heavy_vs_0h,lower_wape_than_0h_flag,0
+decile_uncensored_basis,10,"decile 10/10 of series-level mean y_true computed over zero-stockout rows only, range [2.4200, 42.4400]",all,n_sp,4997
+decile_uncensored_basis,10,"decile 10/10 of series-level mean y_true computed over zero-stockout rows only, range [2.4200, 42.4400]",all,series_mean_y_min,2.42
+decile_uncensored_basis,10,"decile 10/10 of series-level mean y_true computed over zero-stockout rows only, range [2.4200, 42.4400]",all,series_mean_y_max,42.44
+decile_uncensored_basis,10,"decile 10/10 of series-level mean y_true computed over zero-stockout rows only, range [2.4200, 42.4400]",0h,n_rows,19194
+decile_uncensored_basis,10,"decile 10/10 of series-level mean y_true computed over zero-stockout rows only, range [2.4200, 42.4400]",0h,mean_y,5.23894
+decile_uncensored_basis,10,"decile 10/10 of series-level mean y_true computed over zero-stockout rows only, range [2.4200, 42.4400]",0h,wape_pct,21.2661
+decile_uncensored_basis,10,"decile 10/10 of series-level mean y_true computed over zero-stockout rows only, range [2.4200, 42.4400]",0h,wpe_pct,-9.67542
+decile_uncensored_basis,10,"decile 10/10 of series-level mean y_true computed over zero-stockout rows only, range [2.4200, 42.4400]",light,n_rows,5866
+decile_uncensored_basis,10,"decile 10/10 of series-level mean y_true computed over zero-stockout rows only, range [2.4200, 42.4400]",light,mean_y,4.77551
+decile_uncensored_basis,10,"decile 10/10 of series-level mean y_true computed over zero-stockout rows only, range [2.4200, 42.4400]",light,wape_pct,20.8005
+decile_uncensored_basis,10,"decile 10/10 of series-level mean y_true computed over zero-stockout rows only, range [2.4200, 42.4400]",light,wpe_pct,-8.46803
+decile_uncensored_basis,10,"decile 10/10 of series-level mean y_true computed over zero-stockout rows only, range [2.4200, 42.4400]",heavy,n_rows,9919
+decile_uncensored_basis,10,"decile 10/10 of series-level mean y_true computed over zero-stockout rows only, range [2.4200, 42.4400]",heavy,mean_y,2.62442
+decile_uncensored_basis,10,"decile 10/10 of series-level mean y_true computed over zero-stockout rows only, range [2.4200, 42.4400]",heavy,wape_pct,49.0751
+decile_uncensored_basis,10,"decile 10/10 of series-level mean y_true computed over zero-stockout rows only, range [2.4200, 42.4400]",heavy,wpe_pct,28.2893
+decile_uncensored_basis,10,"decile 10/10 of series-level mean y_true computed over zero-stockout rows only, range [2.4200, 42.4400]",light_vs_0h,wape_minus_0h_pp,-0.465557
+decile_uncensored_basis,10,"decile 10/10 of series-level mean y_true computed over zero-stockout rows only, range [2.4200, 42.4400]",light_vs_0h,lower_wape_than_0h_flag,1
+decile_uncensored_basis,10,"decile 10/10 of series-level mean y_true computed over zero-stockout rows only, range [2.4200, 42.4400]",heavy_vs_0h,wape_minus_0h_pp,27.809
+decile_uncensored_basis,10,"decile 10/10 of series-level mean y_true computed over zero-stockout rows only, range [2.4200, 42.4400]",heavy_vs_0h,lower_wape_than_0h_flag,0
+decile_uncensored_basis,all,summary over all 10 deciles on the zero-stockout-only demand basis; 0 of 50000 series have no zero-stockout row and are excluded,light_vs_0h,n_groups,10
+decile_uncensored_basis,all,summary over all 10 deciles on the zero-stockout-only demand basis; 0 of 50000 series have no zero-stockout row and are excluded,light_vs_0h,n_groups_light_lower,10
+decile_uncensored_basis,all,summary over all 10 deciles on the zero-stockout-only demand basis; 0 of 50000 series have no zero-stockout row and are excluded,all,n_sp_excluded_no_uncensored_row,0
+date,2024-06-26,test date 2024-06-26 (day 1 of 7),all,n_rows,50000
+date,2024-06-26,test date 2024-06-26 (day 1 of 7),0h,n_rows,29914
+date,2024-06-26,test date 2024-06-26 (day 1 of 7),0h,mean_y,1.14942
+date,2024-06-26,test date 2024-06-26 (day 1 of 7),0h,wape_pct,28.0189
+date,2024-06-26,test date 2024-06-26 (day 1 of 7),0h,wpe_pct,1.28084
+date,2024-06-26,test date 2024-06-26 (day 1 of 7),light,n_rows,6866
+date,2024-06-26,test date 2024-06-26 (day 1 of 7),light,mean_y,1.35308
+date,2024-06-26,test date 2024-06-26 (day 1 of 7),light,wape_pct,25.0239
+date,2024-06-26,test date 2024-06-26 (day 1 of 7),light,wpe_pct,-13.636
+date,2024-06-26,test date 2024-06-26 (day 1 of 7),heavy,n_rows,13220
+date,2024-06-26,test date 2024-06-26 (day 1 of 7),heavy,mean_y,0.854985
+date,2024-06-26,test date 2024-06-26 (day 1 of 7),heavy,wape_pct,43.578
+date,2024-06-26,test date 2024-06-26 (day 1 of 7),heavy,wpe_pct,15.6143
+date,2024-06-26,test date 2024-06-26 (day 1 of 7),light_vs_0h,wape_minus_0h_pp,-2.99498
+date,2024-06-26,test date 2024-06-26 (day 1 of 7),light_vs_0h,lower_wape_than_0h_flag,1
+date,2024-06-26,test date 2024-06-26 (day 1 of 7),heavy_vs_0h,wape_minus_0h_pp,15.5592
+date,2024-06-26,test date 2024-06-26 (day 1 of 7),heavy_vs_0h,lower_wape_than_0h_flag,0
+date,2024-06-27,test date 2024-06-27 (day 2 of 7),all,n_rows,50000
+date,2024-06-27,test date 2024-06-27 (day 2 of 7),0h,n_rows,31430
+date,2024-06-27,test date 2024-06-27 (day 2 of 7),0h,mean_y,1.14019
+date,2024-06-27,test date 2024-06-27 (day 2 of 7),0h,wape_pct,28.1471
+date,2024-06-27,test date 2024-06-27 (day 2 of 7),0h,wpe_pct,-1.67295
+date,2024-06-27,test date 2024-06-27 (day 2 of 7),light,n_rows,6645
+date,2024-06-27,test date 2024-06-27 (day 2 of 7),light,mean_y,1.36567
+date,2024-06-27,test date 2024-06-27 (day 2 of 7),light,wape_pct,26.3237
+date,2024-06-27,test date 2024-06-27 (day 2 of 7),light,wpe_pct,-14.4351
+date,2024-06-27,test date 2024-06-27 (day 2 of 7),heavy,n_rows,11925
+date,2024-06-27,test date 2024-06-27 (day 2 of 7),heavy,mean_y,0.880627
+date,2024-06-27,test date 2024-06-27 (day 2 of 7),heavy,wape_pct,45.0563
+date,2024-06-27,test date 2024-06-27 (day 2 of 7),heavy,wpe_pct,12.2041
+date,2024-06-27,test date 2024-06-27 (day 2 of 7),light_vs_0h,wape_minus_0h_pp,-1.82336
+date,2024-06-27,test date 2024-06-27 (day 2 of 7),light_vs_0h,lower_wape_than_0h_flag,1
+date,2024-06-27,test date 2024-06-27 (day 2 of 7),heavy_vs_0h,wape_minus_0h_pp,16.9092
+date,2024-06-27,test date 2024-06-27 (day 2 of 7),heavy_vs_0h,lower_wape_than_0h_flag,0
+date,2024-06-28,test date 2024-06-28 (day 3 of 7),all,n_rows,50000
+date,2024-06-28,test date 2024-06-28 (day 3 of 7),0h,n_rows,33810
+date,2024-06-28,test date 2024-06-28 (day 3 of 7),0h,mean_y,1.13753
+date,2024-06-28,test date 2024-06-28 (day 3 of 7),0h,wape_pct,29.7432
+date,2024-06-28,test date 2024-06-28 (day 3 of 7),0h,wpe_pct,2.69327
+date,2024-06-28,test date 2024-06-28 (day 3 of 7),light,n_rows,6154
+date,2024-06-28,test date 2024-06-28 (day 3 of 7),light,mean_y,1.47671
+date,2024-06-28,test date 2024-06-28 (day 3 of 7),light,wape_pct,25.545
+date,2024-06-28,test date 2024-06-28 (day 3 of 7),light,wpe_pct,-5.858
+date,2024-06-28,test date 2024-06-28 (day 3 of 7),heavy,n_rows,10036
+date,2024-06-28,test date 2024-06-28 (day 3 of 7),heavy,mean_y,0.788519
+date,2024-06-28,test date 2024-06-28 (day 3 of 7),heavy,wape_pct,48.4199
+date,2024-06-28,test date 2024-06-28 (day 3 of 7),heavy,wpe_pct,20.3794
+date,2024-06-28,test date 2024-06-28 (day 3 of 7),light_vs_0h,wape_minus_0h_pp,-4.19826
+date,2024-06-28,test date 2024-06-28 (day 3 of 7),light_vs_0h,lower_wape_than_0h_flag,1
+date,2024-06-28,test date 2024-06-28 (day 3 of 7),heavy_vs_0h,wape_minus_0h_pp,18.6766
+date,2024-06-28,test date 2024-06-28 (day 3 of 7),heavy_vs_0h,lower_wape_than_0h_flag,0
+date,2024-06-29,test date 2024-06-29 (day 4 of 7),all,n_rows,50000
+date,2024-06-29,test date 2024-06-29 (day 4 of 7),0h,n_rows,32625
+date,2024-06-29,test date 2024-06-29 (day 4 of 7),0h,mean_y,1.36517
+date,2024-06-29,test date 2024-06-29 (day 4 of 7),0h,wape_pct,28.2946
+date,2024-06-29,test date 2024-06-29 (day 4 of 7),0h,wpe_pct,-7.7398
+date,2024-06-29,test date 2024-06-29 (day 4 of 7),light,n_rows,5700
+date,2024-06-29,test date 2024-06-29 (day 4 of 7),light,mean_y,1.86258
+date,2024-06-29,test date 2024-06-29 (day 4 of 7),light,wape_pct,25.1709
+date,2024-06-29,test date 2024-06-29 (day 4 of 7),light,wpe_pct,-16.691
+date,2024-06-29,test date 2024-06-29 (day 4 of 7),heavy,n_rows,11675
+date,2024-06-29,test date 2024-06-29 (day 4 of 7),heavy,mean_y,1.09775
+date,2024-06-29,test date 2024-06-29 (day 4 of 7),heavy,wape_pct,43.7363
+date,2024-06-29,test date 2024-06-29 (day 4 of 7),heavy,wpe_pct,6.75973
+date,2024-06-29,test date 2024-06-29 (day 4 of 7),light_vs_0h,wape_minus_0h_pp,-3.12363
+date,2024-06-29,test date 2024-06-29 (day 4 of 7),light_vs_0h,lower_wape_than_0h_flag,1
+date,2024-06-29,test date 2024-06-29 (day 4 of 7),heavy_vs_0h,wape_minus_0h_pp,15.4417
+date,2024-06-29,test date 2024-06-29 (day 4 of 7),heavy_vs_0h,lower_wape_than_0h_flag,0
+date,2024-06-30,test date 2024-06-30 (day 5 of 7),all,n_rows,50000
+date,2024-06-30,test date 2024-06-30 (day 5 of 7),0h,n_rows,25190
+date,2024-06-30,test date 2024-06-30 (day 5 of 7),0h,mean_y,1.54263
+date,2024-06-30,test date 2024-06-30 (day 5 of 7),0h,wape_pct,31.4725
+date,2024-06-30,test date 2024-06-30 (day 5 of 7),0h,wpe_pct,-18.0628
+date,2024-06-30,test date 2024-06-30 (day 5 of 7),light,n_rows,6274
+date,2024-06-30,test date 2024-06-30 (day 5 of 7),light,mean_y,2.04127
+date,2024-06-30,test date 2024-06-30 (day 5 of 7),light,wape_pct,31.6854
+date,2024-06-30,test date 2024-06-30 (day 5 of 7),light,wpe_pct,-27.9679
+date,2024-06-30,test date 2024-06-30 (day 5 of 7),heavy,n_rows,18536
+date,2024-06-30,test date 2024-06-30 (day 5 of 7),heavy,mean_y,1.31348
+date,2024-06-30,test date 2024-06-30 (day 5 of 7),heavy,wape_pct,38.5772
+date,2024-06-30,test date 2024-06-30 (day 5 of 7),heavy,wpe_pct,-6.91007
+date,2024-06-30,test date 2024-06-30 (day 5 of 7),light_vs_0h,wape_minus_0h_pp,0.212866
+date,2024-06-30,test date 2024-06-30 (day 5 of 7),light_vs_0h,lower_wape_than_0h_flag,0
+date,2024-06-30,test date 2024-06-30 (day 5 of 7),heavy_vs_0h,wape_minus_0h_pp,7.10474
+date,2024-06-30,test date 2024-06-30 (day 5 of 7),heavy_vs_0h,lower_wape_than_0h_flag,0
+date,2024-07-01,test date 2024-07-01 (day 6 of 7),all,n_rows,50000
+date,2024-07-01,test date 2024-07-01 (day 6 of 7),0h,n_rows,27304
+date,2024-07-01,test date 2024-07-01 (day 6 of 7),0h,mean_y,1.17411
+date,2024-07-01,test date 2024-07-01 (day 6 of 7),0h,wape_pct,29.0731
+date,2024-07-01,test date 2024-07-01 (day 6 of 7),0h,wpe_pct,-1.1502
+date,2024-07-01,test date 2024-07-01 (day 6 of 7),light,n_rows,7136
+date,2024-07-01,test date 2024-07-01 (day 6 of 7),light,mean_y,1.24271
+date,2024-07-01,test date 2024-07-01 (day 6 of 7),light,wape_pct,26.7033
+date,2024-07-01,test date 2024-07-01 (day 6 of 7),light,wpe_pct,-10.0992
+date,2024-07-01,test date 2024-07-01 (day 6 of 7),heavy,n_rows,15560
+date,2024-07-01,test date 2024-07-01 (day 6 of 7),heavy,mean_y,0.753326
+date,2024-07-01,test date 2024-07-01 (day 6 of 7),heavy,wape_pct,61.3932
+date,2024-07-01,test date 2024-07-01 (day 6 of 7),heavy,wpe_pct,37.8333
+date,2024-07-01,test date 2024-07-01 (day 6 of 7),light_vs_0h,wape_minus_0h_pp,-2.36981
+date,2024-07-01,test date 2024-07-01 (day 6 of 7),light_vs_0h,lower_wape_than_0h_flag,1
+date,2024-07-01,test date 2024-07-01 (day 6 of 7),heavy_vs_0h,wape_minus_0h_pp,32.3201
+date,2024-07-01,test date 2024-07-01 (day 6 of 7),heavy_vs_0h,lower_wape_than_0h_flag,0
+date,2024-07-02,test date 2024-07-02 (day 7 of 7),all,n_rows,50000
+date,2024-07-02,test date 2024-07-02 (day 7 of 7),0h,n_rows,26289
+date,2024-07-02,test date 2024-07-02 (day 7 of 7),0h,mean_y,1.19464
+date,2024-07-02,test date 2024-07-02 (day 7 of 7),0h,wape_pct,30.8974
+date,2024-07-02,test date 2024-07-02 (day 7 of 7),0h,wpe_pct,-6.36404
+date,2024-07-02,test date 2024-07-02 (day 7 of 7),light,n_rows,7508
+date,2024-07-02,test date 2024-07-02 (day 7 of 7),light,mean_y,1.40243
+date,2024-07-02,test date 2024-07-02 (day 7 of 7),light,wape_pct,26.4107
+date,2024-07-02,test date 2024-07-02 (day 7 of 7),light,wpe_pct,-14.296
+date,2024-07-02,test date 2024-07-02 (day 7 of 7),heavy,n_rows,16203
+date,2024-07-02,test date 2024-07-02 (day 7 of 7),heavy,mean_y,0.811634
+date,2024-07-02,test date 2024-07-02 (day 7 of 7),heavy,wape_pct,55.5527
+date,2024-07-02,test date 2024-07-02 (day 7 of 7),heavy,wpe_pct,27.4867
+date,2024-07-02,test date 2024-07-02 (day 7 of 7),light_vs_0h,wape_minus_0h_pp,-4.48667
+date,2024-07-02,test date 2024-07-02 (day 7 of 7),light_vs_0h,lower_wape_than_0h_flag,1
+date,2024-07-02,test date 2024-07-02 (day 7 of 7),heavy_vs_0h,wape_minus_0h_pp,24.6554
+date,2024-07-02,test date 2024-07-02 (day 7 of 7),heavy_vs_0h,lower_wape_than_0h_flag,0
+date,all,summary over all 7 test dates,light_vs_0h,n_groups,7
+date,all,summary over all 7 test dates,light_vs_0h,n_groups_light_lower,6
+paired,all,"store-products holding at least one 0h row and one light row with positive observed sales in both, so a per-series WAPE is defined in each stratum",all,n_sp_with_rows_in_both_strata,28920
+paired,all,"store-products holding at least one 0h row and one light row with positive observed sales in both, so a per-series WAPE is defined in each stratum",all,n_sp_paired_wape_defined,28803
+paired,all,"store-products holding at least one 0h row and one light row with positive observed sales in both, so a per-series WAPE is defined in each stratum",0h,n_rows,99681
+paired,all,"store-products holding at least one 0h row and one light row with positive observed sales in both, so a per-series WAPE is defined in each stratum",0h,mean_y,1.30841
+paired,all,"store-products holding at least one 0h row and one light row with positive observed sales in both, so a per-series WAPE is defined in each stratum",0h,pooled_wape_pct,27.7588
+paired,all,"store-products holding at least one 0h row and one light row with positive observed sales in both, so a per-series WAPE is defined in each stratum",0h,median_sp_wape_pct,30.9202
+paired,all,"store-products holding at least one 0h row and one light row with positive observed sales in both, so a per-series WAPE is defined in each stratum",0h,mean_sp_wape_pct,37.7247
+paired,all,"store-products holding at least one 0h row and one light row with positive observed sales in both, so a per-series WAPE is defined in each stratum",light,n_rows,46108
+paired,all,"store-products holding at least one 0h row and one light row with positive observed sales in both, so a per-series WAPE is defined in each stratum",light,mean_y,1.52298
+paired,all,"store-products holding at least one 0h row and one light row with positive observed sales in both, so a per-series WAPE is defined in each stratum",light,pooled_wape_pct,26.8717
+paired,all,"store-products holding at least one 0h row and one light row with positive observed sales in both, so a per-series WAPE is defined in each stratum",light,median_sp_wape_pct,28.2031
+paired,all,"store-products holding at least one 0h row and one light row with positive observed sales in both, so a per-series WAPE is defined in each stratum",light,mean_sp_wape_pct,32.7907
+paired,all,"store-products holding at least one 0h row and one light row with positive observed sales in both, so a per-series WAPE is defined in each stratum",light_vs_0h,n_sp,28803
+paired,all,"store-products holding at least one 0h row and one light row with positive observed sales in both, so a per-series WAPE is defined in each stratum",light_vs_0h,n_sp_light_lower,16117
+paired,all,"store-products holding at least one 0h row and one light row with positive observed sales in both, so a per-series WAPE is defined in each stratum",light_vs_0h,n_sp_0h_lower,12686
+paired,all,"store-products holding at least one 0h row and one light row with positive observed sales in both, so a per-series WAPE is defined in each stratum",light_vs_0h,n_sp_tied,0
+paired,all,"store-products holding at least one 0h row and one light row with positive observed sales in both, so a per-series WAPE is defined in each stratum",light_vs_0h,share_sp_light_lower,0.55956
+paired,all,"store-products holding at least one 0h row and one light row with positive observed sales in both, so a per-series WAPE is defined in each stratum",light_vs_0h,median_sp_wape_diff_pp,-3.06149
+paired,all,"store-products holding at least one 0h row and one light row with positive observed sales in both, so a per-series WAPE is defined in each stratum",light_vs_0h,median_sp_wape_diff_frac,-0.0306149
+paired,all,"store-products holding at least one 0h row and one light row with positive observed sales in both, so a per-series WAPE is defined in each stratum",light_vs_0h,mean_sp_wape_diff_pp,-4.93397
+paired,all,"store-products holding at least one 0h row and one light row with positive observed sales in both, so a per-series WAPE is defined in each stratum",light_vs_0h,p10_sp_wape_diff_pp,-36.6019
+paired,all,"store-products holding at least one 0h row and one light row with positive observed sales in both, so a per-series WAPE is defined in each stratum",light_vs_0h,p25_sp_wape_diff_pp,-18.3998
+paired,all,"store-products holding at least one 0h row and one light row with positive observed sales in both, so a per-series WAPE is defined in each stratum",light_vs_0h,p75_sp_wape_diff_pp,10.8939
+paired,all,"store-products holding at least one 0h row and one light row with positive observed sales in both, so a per-series WAPE is defined in each stratum",light_vs_0h,p90_sp_wape_diff_pp,24.5458
+paired,all,"store-products holding at least one 0h row and one light row with positive observed sales in both, so a per-series WAPE is defined in each stratum",light_vs_0h,wilcoxon_signed_rank_p_light_less,2.31964e-159

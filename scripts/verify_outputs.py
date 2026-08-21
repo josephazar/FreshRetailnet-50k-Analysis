@@ -45,7 +45,8 @@ def main():
         'inventory_results.csv',
         'inventory_selection.json', 'profit_inference.csv',
         'recovery_runtime.json',
-        'uncensored_diagnostics.csv', 'inventory_cost_sensitivity.csv',
+        'uncensored_diagnostics.csv', 'stockout_stratum_robustness.csv',
+        'inventory_cost_sensitivity.csv',
         'multistep_validation_results.csv', 'parsimony_results.csv',
     ]:
         ok &= check(f"  results/current/{name}", (results / name).exists())
@@ -124,7 +125,10 @@ def main():
                            'table_calibration_context.tex',
                            'table_tobit_sensitivity.tex', 'table_cost_sensitivity.tex',
                            'table_benchmark_forecast.tex', 'table_wilcoxon.tex',
-                           'table_accuracy_ablation.tex', 'table_parsimony.tex']
+                           'table_accuracy_ablation.tex', 'table_parsimony.tex',
+                           'table_hyperparam_grid.tex',
+                           'table_stockout_strata.tex',
+                           'appendix_features.tex']
         for t in required_tables:
             ok &= check(f"  {t}", (paper_tables / t).exists())
         # Recovery sensitivity is reported through the causal Tobit table.

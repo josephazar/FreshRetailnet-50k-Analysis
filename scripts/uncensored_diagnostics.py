@@ -10,11 +10,17 @@ direction of bias relative to true demand is not identified.
 Strata by stockout intensity are included so the reader can see how the
 error metrics move with censoring exposure rather than a single split.
 
+`mean_y` is reported alongside the error metrics because WAPE normalizes by
+the observed-sales level, which differs sharply across the strata; the strata
+are therefore not on a common denominator and their WAPEs are not directly
+comparable as model-quality statements.
+
 Run (after scripts/headline_run.py has produced --run_dir):
     ./venv/bin/python scripts/uncensored_diagnostics.py --run_dir output/headline
 
 Output (inside --run_dir):
-    uncensored_diagnostics.csv     one row per stratum x model
+    uncensored_diagnostics.csv     one row per stratum x model, with the
+                                   stratum mean of observed sales (mean_y)
     uncensored_diagnostics_metadata.json
 """
 from __future__ import annotations
@@ -61,7 +67,8 @@ def main():
                          'share_rows': round(float(m.mean()), 4),
                          'wape': round(wape(y[m], p), 4),
                          'wpe': round(wpe(y[m], p), 4),
-                         'mae': round(mae(y[m], p), 4)})
+                         'mae': round(mae(y[m], p), 4),
+                         'mean_y': round(float(y[m].mean()), 4)})
     out = pd.DataFrame(rows)
     out.to_csv(run_dir / 'uncensored_diagnostics.csv', index=False)
     print(out[out['model'] == 'ensemble'].to_string(index=False))

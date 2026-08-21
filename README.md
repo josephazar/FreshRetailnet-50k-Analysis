@@ -53,6 +53,7 @@ scripts/
   hyperparam_grid.py          Validation-only robustness grid
   profit_inference.py         Store-clustered policy intervals and paired tests
   uncensored_diagnostics.py   Stockout-exposure diagnostic strata
+  stratum_robustness.py       Stockout-stratum error ordering under conditioning
   cost_sensitivity.py         Inventory profit across cost grids
   remeasure_recovery_runtime.py  Controlled recovery runtime benchmark
   statistical_significance.py   Benchmark confidence intervals and paired tests
