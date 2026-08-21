@@ -8,6 +8,7 @@ from __future__ import annotations
 import csv
 import json
 import math
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -196,7 +197,7 @@ def main():
         ok &= check("profit equation multiplies sold units by revenue",
                     '\\text{Sold}_i \\cdot r' in paper)
         ok &= check("paper cites immutable software release",
-                    'v1.0.0' in paper)
+                    re.search(r'release tag .{0,20}v\d+\.\d+\.\d+', paper) is not None)
         ok &= check("dataset stockout field semantics disclosed",
                     'number of \\emph{out-of-stock} hours' in paper)
     else:
