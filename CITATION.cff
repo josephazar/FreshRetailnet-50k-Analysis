@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite this repository and the accompanying manuscript metadata below."
+message: "If you use this software, please cite the published article below."
 title: "Leak-Free Censored Demand Forecasting and Inventory Optimization on FreshRetailNet-50K"
 abstract: >-
   Reproducible, leakage-free, end-to-end pipeline for censored-demand recovery,
@@ -7,7 +7,7 @@ abstract: >-
   optimization on the FreshRetailNet-50K benchmark.
 type: software
 version: 1.1.0
-date-released: 2026-08-21
+date-released: "2026-08-21"
 authors:
   - family-names: Azar
     given-names: Joseph
@@ -30,3 +30,9 @@ preferred-citation:
     - family-names: Azar
       given-names: Joseph
   year: 2026
+  date-published: "2026-08-30"
+  journal: "Inventions"
+  volume: 11
+  issue: 5
+  doi: "10.3390/inventions11050089"
+  url: "https://www.mdpi.com/2411-5134/11/5/89"

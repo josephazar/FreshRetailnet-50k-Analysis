@@ -157,7 +157,30 @@ result artifacts.
 
 ## Citation
 
-Please cite the paper and software metadata in `CITATION.cff`.
+If this code or its accompanying artifacts are useful in your research, please
+cite the published paper:
+
+> Azar, J. A Reproducible, Leakage-Free Pipeline for Censored Demand Forecasting
+> and Inventory Optimization on FreshRetailNet-50K. *Inventions* **2026**, *11*(5),
+> 89. [Article](https://www.mdpi.com/2411-5134/11/5/89) ·
+> [DOI](https://doi.org/10.3390/inventions11050089)
+
+```bibtex
+@article{azar2026freshretailnet,
+  author  = {Azar, Joseph},
+  title   = {A Reproducible, Leakage-Free Pipeline for Censored Demand Forecasting and Inventory Optimization on FreshRetailNet-50K},
+  journal = {Inventions},
+  year    = {2026},
+  volume  = {11},
+  number  = {5},
+  article-number = {89},
+  url     = {https://www.mdpi.com/2411-5134/11/5/89},
+  issn    = {2411-5134},
+  doi     = {10.3390/inventions11050089}
+}
+```
+
+Machine-readable citation metadata is available in `CITATION.cff`.
 
 ## License
 
