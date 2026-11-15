@@ -9,7 +9,7 @@ and evaluated on
 stock-status vectors.
 
 This repository contains the current implementation, tests, compact result
-artifacts, and reproducibility metadata for software release `v1.1.0`.
+artifacts, and reproducibility metadata for software release `v1.2.0`.
 
 ## Results
 
@@ -162,7 +162,7 @@ result artifacts.
 
 ## Errata
 
-**Evaluation-week stock status in recursive inference (fixed after `v1.1.0`).**
+**Evaluation-week stock status in recursive inference (fixed in `v1.2.0`).**
 In `v1.0.0` and `v1.1.0`, recursive inference zeroed evaluation-week sales but
 kept the realised evaluation-week stock status. For evaluation days 2-7 the
 stockout-history features `so1`, `sor7`, `sor14`, `soh7` and `soh14`

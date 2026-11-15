@@ -2,12 +2,14 @@
 
 This file documents the authoritative full-scale result bundle in
 `results/current/`. Outputs outside this bundle are not part of the public
-code companion. Release `v1.1.0` adds robustness diagnostics while preserving
-the headline outputs and their original `v1.0.0` execution provenance.
+code companion. Release `v1.1.0` added robustness diagnostics, and `v1.2.0`
+fixes the evaluation-week stock-status issue described under Known issue. Both
+preserve the headline outputs and their original `v1.0.0` execution
+provenance.
 
 | Field | Value |
 |---|---|
-| Code companion release | `v1.1.0` |
+| Code companion release | `v1.2.0` |
 | Headline run provenance | `v1.0.0` |
 | Execution date | 2026-08-12 |
 | Store-product series | 50,000 |
@@ -34,6 +36,6 @@ proxy, not an estimate or bound for profit under latent demand.
 
 The recursive inference used by this run read realised evaluation-week stock
 status through five stockout-history features (README, Errata). Re-scored with
-the same final models and the stock-status fix, raw / recentered WAPE are
+the same final models and the `v1.2.0` stock-status fix, raw / recentered WAPE are
 33.71% / 32.98% and Q90 Direct profit / fill rate are 0.2416 / 0.955. Exact
 fixed-protocol values require a rerun of `scripts/headline_run.py`.
