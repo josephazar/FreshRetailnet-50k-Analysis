@@ -26,7 +26,8 @@ from catboost import CatBoostRegressor
 SCRIPT_DIR = Path(__file__).parent.resolve()
 sys.path.insert(0, str(SCRIPT_DIR))
 
-from src.feature_builder import FeatureBuilder, predict_eval_recursive
+from src.feature_builder import (FeatureBuilder, hold_stockout_history_at_origin,
+                                 predict_eval_recursive)
 from src.metrics import wape, wpe, mae, rmse, corr, smape
 from pipeline_leakfree import load_data, set_all_seeds
 
@@ -115,16 +116,19 @@ def _predict_recursive_single(fb, mdl, model_name: str, fcols, train_df, eval_df
     eval_dates = sorted(ev_work['dt'].unique())
     preds_out = np.zeros(len(ev_work), dtype='float32')
 
-    for day in eval_dates:
+    origin_so = None
+    for day_idx, day in enumerate(eval_dates):
         so_far = ev_work['dt'] <= day
         combined = pd.concat([hist, ev_work[so_far]], ignore_index=True)
         feat = fb.transform(combined)
         today = feat['dt'] == day
+        sp_today = feat.loc[today, 'sp'].values
+        origin_so = hold_stockout_history_at_origin(
+            feat, today, sp_today, day_idx, origin_so)
         X = feat.loc[today, fcols].fillna(0).values
         p = predict_model(mdl, model_name, X)
         # Write back
         rows = ev_work[ev_work['dt'] == day].index
-        sp_today = feat.loc[today, 'sp'].values
         mapper = pd.Series(p, index=sp_today)
         ev_work.loc[rows, 'sale_amount'] = ev_work.loc[rows, 'sp'].map(mapper).values
         ev_work.loc[rows, 'dem_rec'] = ev_work.loc[rows, 'sale_amount']

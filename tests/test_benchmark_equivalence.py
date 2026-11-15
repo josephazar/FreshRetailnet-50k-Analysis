@@ -77,3 +77,31 @@ def test_single_model_recursion_matches_pipeline_path(synth):
         err_msg=("benchmark _predict_recursive_single diverged from "
                  "src.feature_builder.predict_eval_recursive"),
     )
+
+
+def test_single_model_recursion_matches_pipeline_path_with_stockouts():
+    """Same lock-step check on a panel whose stock status varies, so the two
+    recursions must also agree on how evaluation-week stock status is held
+    (the constant-status fixture above cannot tell)."""
+    lgb = pytest.importorskip('lightgbm')
+    bench = pytest.importorskip('benchmark_comparison')
+    from tests.stock_panel import flip_stock_status, make_stock_panel
+    train, ev = make_stock_panel()
+
+    fb = FeatureBuilder(n_clusters=2).fit(train)
+    train_feat = fb.transform(train)
+    fc = fb.feature_cols(train_feat)
+    params = {'objective': 'regression_l1', 'metric': 'mae', 'num_leaves': 31,
+              'learning_rate': 0.1, 'verbose': -1, 'n_jobs': 1, 'seed': 42}
+    d = lgb.Dataset(train_feat[fc].fillna(0).values,
+                    label=train_feat['sale_amount'].values)
+    mdl = lgb.train(params, d, num_boost_round=50)
+
+    p_single, _ = bench._predict_recursive_single(fb, mdl, 'lgbm', fc, train, ev)
+    preds, _ = predict_eval_recursive(fb, {'mae': mdl}, fc, train, ev)
+    np.testing.assert_allclose(p_single, preds['mae'], rtol=1e-5, atol=1e-6)
+    p_flip, _ = bench._predict_recursive_single(
+        fb, mdl, 'lgbm', fc, train, flip_stock_status(ev))
+    np.testing.assert_array_equal(
+        p_single, p_flip,
+        err_msg="benchmark recursion reads evaluation-week stock status")

@@ -29,3 +29,11 @@ the headline outputs and their original `v1.0.0` execution provenance.
 
 Profit is evaluated against observed censored sales. It is an operational
 proxy, not an estimate or bound for profit under latent demand.
+
+## Known issue
+
+The recursive inference used by this run read realised evaluation-week stock
+status through five stockout-history features (README, Errata). Re-scored with
+the same final models and the stock-status fix, raw / recentered WAPE are
+33.71% / 32.98% and Q90 Direct profit / fill rate are 0.2416 / 0.955. Exact
+fixed-protocol values require a rerun of `scripts/headline_run.py`.

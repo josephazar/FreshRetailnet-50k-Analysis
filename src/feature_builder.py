@@ -3,8 +3,10 @@
 ``FeatureBuilder.fit`` learns aggregate lookups from the training window only,
 and ``FeatureBuilder.transform`` applies those fixed lookups to later rows.
 Evaluation-time lag and rolling features are generated recursively: each day's
-prediction becomes history for the next day, so held-out actuals never enter
-the model inputs.
+prediction becomes history for the next day, so held-out sales never enter
+the model inputs. Held-out stock status has no prediction to substitute, so
+the stockout-history features are held at the forecast origin instead (see
+``hold_stockout_history_at_origin``).
 """
 
 from __future__ import annotations
@@ -247,6 +249,9 @@ class FeatureBuilder:
         eval rows do NOT contain leaked future actuals. For inference, either
         pass only rows whose actuals are from strict past, or mask eval actuals
         to NaN and rely on recursive prediction (see predict_eval_recursive).
+        Eval-row stock status still feeds the stockout-history features; the
+        predict_eval_* helpers hold those at the origin
+        (hold_stockout_history_at_origin).
         """
         import warnings as _warnings
         if not self._fitted:
@@ -282,6 +287,34 @@ class FeatureBuilder:
         return [c for c in df.columns if c not in excl]
 
 
+# Stockout-history features built by FeatureBuilder._add_stockout, each mapped
+# to the most recent lag (in days) it reads.
+STOCKOUT_HISTORY_MIN_LAG = {'so1': 1, 'so7': 7, 'sor7': 1, 'sor14': 1,
+                            'soh7': 1, 'soh14': 1}
+
+
+def hold_stockout_history_at_origin(feat, day_mask, sp_day, day_idx, origin):
+    """Keep realised evaluation-day stock status out of the model inputs.
+
+    Stock status is observed during each evaluation day, so at the forecast
+    origin it is as unknown as that day's sales. A stockout-history feature
+    whose most recent lag reaches an evaluation day (day_idx >= lag, where
+    day_idx is 0 on the first forecast day) is held at its first-forecast-day
+    value, which reads training days only. predict_eval_direct applies the
+    same rule to its whole history block.
+
+    Modifies ``feat`` in place on the ``day_mask`` rows and returns the
+    origin values, which are captured when day_idx == 0.
+    """
+    cols = list(STOCKOUT_HISTORY_MIN_LAG)
+    if day_idx == 0:
+        return feat.loc[day_mask, ['sp'] + cols].set_index('sp')
+    held = [c for c, lag in STOCKOUT_HISTORY_MIN_LAG.items() if day_idx >= lag]
+    if held:
+        feat.loc[day_mask, held] = origin.reindex(sp_day)[held].to_numpy(dtype='float32')
+    return origin
+
+
 def predict_eval_recursive(
     fbuilder: FeatureBuilder,
     models: dict,
@@ -295,7 +328,8 @@ def predict_eval_recursive(
       1. Build features on pd.concat([train, predicted_eval_so_far]) where
          predicted_eval_so_far has sale_amount filled with PREDICTIONS
          (not actuals) for all prior eval days.
-      2. Slice to current eval day.
+      2. Slice to current eval day and hold its stockout-history features at
+         the origin (eval-day stock status is realised, not known at T).
       3. Predict using each model.
       4. Write predictions into sale_amount slot (so next day's lag_1 is a
          prediction, not a leaked actual).
@@ -325,6 +359,7 @@ def predict_eval_recursive(
 
     predictions = {name: np.zeros(len(eval_sorted), dtype='float32') for name in models}
 
+    origin_so = None
     for day_idx, day in enumerate(eval_dates):
         # Combine history with predicted-so-far eval days
         so_far_mask = eval_work['dt'] < day
@@ -332,10 +367,12 @@ def predict_eval_recursive(
                              ignore_index=True)
         feat = fbuilder.transform(combined)
         today_mask = feat['dt'] == day
+        sp_today = feat.loc[today_mask, 'sp'].values
+        origin_so = hold_stockout_history_at_origin(
+            feat, today_mask, sp_today, day_idx, origin_so)
         X_today = feat.loc[today_mask, fcols].fillna(0).values
 
         # Predict with each model
-        sp_today = feat.loc[today_mask, 'sp'].values
         today_preds = {}
         for name, mdl in models.items():
             today_preds[name] = np.clip(mdl.predict(X_today), 0, None).astype('float32')
@@ -380,7 +417,8 @@ def predict_eval_single_origin(
     """Simpler single-origin alternative to recursive prediction.
 
     Features for ALL eval days are built using only training history (eval
-    sale_amount set to 0 before computing lags). Each eval day gets features
+    sale_amount set to 0 before computing lags; stockout-history features held
+    at the origin, as in predict_eval_recursive). Each eval day gets features
     whose lag_k refers back exactly k days -- for day 1 that's the last
     training day (correct); for day 7 that's 7 days before last training
     (legit, and what lag_7 always was).
@@ -402,6 +440,11 @@ def predict_eval_single_origin(
 
     combined = pd.concat([hist, ev], ignore_index=True)
     feat = fbuilder.transform(combined)
+    origin_so = None
+    for day_idx, day in enumerate(sorted(ev['dt'].unique())):
+        day_mask = feat['dt'] == day
+        origin_so = hold_stockout_history_at_origin(
+            feat, day_mask, feat.loc[day_mask, 'sp'].values, day_idx, origin_so)
     eval_mask = feat['dt'].isin(ev['dt'].unique())
     X_eval = feat.loc[eval_mask, fcols].fillna(0).values
     sp_eval = feat.loc[eval_mask, 'sp'].values

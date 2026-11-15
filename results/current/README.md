@@ -2,7 +2,9 @@
 
 This directory is the source of truth for the compact, human-readable results
 reported by the software release and paper. Large prediction and per-row order
-files are excluded; the documented scripts regenerate them.
+files are excluded; the documented scripts regenerate them. These artifacts
+predate the evaluation-week stock-status fix described in the top-level README
+(Errata), which also gives the re-scored headline figures.
 
 `release_summary.json` is the top-level index. `run_metadata.json` records the
 50,000-series execution environment and input hashes. The remaining CSV and

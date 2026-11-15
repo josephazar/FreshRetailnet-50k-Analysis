@@ -25,6 +25,10 @@ Fold-causal protocol on all 50,000 store-products:
 | Test profit / fill rate | 0.2413 / 0.956 |
 | Profit difference vs. Static MinMax | +0.0762 per SP-day; 95% CI [0.0718, 0.0810] |
 
+These figures predate the stock-status fix described under [Errata](#errata).
+Re-scored with the fix, the forecast WAPE rises by about 0.2 points and the
+inventory figures are essentially unchanged.
+
 The inventory result is an observed-sales proxy under censored evaluation. Its
 bias relative to latent-demand profit is not identified. The complete compact
 evidence bundle is in `results/current/`, and `docs/run_manifest.md` documents
@@ -148,12 +152,46 @@ result artifacts.
 
 - Aggregate features are fitted on training data only and applied through
   immutable lookup tables.
-- Multi-step recursive inference never uses an evaluation-day actual as a lag
-  for a later evaluation day.
+- Multi-step recursive inference never uses an evaluation-day actual, sales or
+  stock status, as an input for a later evaluation day. Up to `v1.1.0` stock
+  status was not covered; see [Errata](#errata).
 - Calibration and policy selection use validation folds only; the held-out test
   window is evaluated once.
 - Negative-control tests reproduce the prohibited concatenate-and-recompute
   pattern and confirm that the invariance checks detect it.
+
+## Errata
+
+**Evaluation-week stock status in recursive inference (fixed after `v1.1.0`).**
+In `v1.0.0` and `v1.1.0`, recursive inference zeroed evaluation-week sales but
+kept the realised evaluation-week stock status. For evaluation days 2-7 the
+stockout-history features `so1`, `sor7`, `sor14`, `soh7` and `soh14`
+therefore read stockouts that are not known at the forecast origin. Every
+recursive forecast shared this path: the headline run's validation folds and
+test window, the validation studies, and the benchmark. The features are now
+held at their first-forecast-day values, which read training days only, the
+rule the direct forecaster already applied. The leakage tests now also mutate
+evaluation-week stock status, on a synthetic panel where stock status carries
+signal; the earlier fixtures held it constant, which is why they missed it.
+
+The committed artifacts in `results/current/` predate the fix. Re-scoring the
+test window with the same final models and the committed calibrator:
+
+| Metric | Committed | With fix |
+|---|---|---|
+| Forecast WAPE, raw ensemble | 33.54% | 33.71% |
+| Forecast WAPE, validation-defined recentering | 32.79% | 32.98% |
+| Forecast bias (WPE), raw / recentered | -8.23% / -2.62% | -8.48% / -2.88% |
+| Q10-Q90 interval coverage | 70.3% | 70.0% |
+| Q90 Direct test profit / fill rate | 0.2413 / 0.956 | 0.2416 / 0.955 |
+
+The recentered figures reuse a calibrator learned from validation forecasts
+that had the same issue, so a rerun of `scripts/headline_run.py` gives the
+exact values. In the multi-step validation study the promotion decision is
+unchanged: with the fix, the challenger's bias excess over the incumbent grows
+from 1.03 to 1.18 points against the 1.0-point tolerance, so the incumbent is
+still retained. The benchmark, ablation and sensitivity tables were not
+re-scored.
 
 ## Citation
 

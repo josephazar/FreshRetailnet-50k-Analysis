@@ -193,3 +193,83 @@ def test_horizon_independence(synth):
     np.testing.assert_array_almost_equal(
         preds_a['mae'][mask_last_a], preds_b['mae'][mask_last_b], decimal=4,
         err_msg="Last-day predictions depend on earlier-day actuals")
+
+
+# ---------------------------------------------------------------------------
+# Stock status is an evaluation-week actual too. The tests above mutate only
+# sales on a panel with constant stock status, so they cannot see a forecast
+# that reads realised evaluation-week stockouts through the stockout-history
+# features. The tests below use a panel where stock status persists and cuts
+# sales, so a trained model relies on those features.
+# ---------------------------------------------------------------------------
+from tests.stock_panel import flip_stock_status, make_stock_panel  # noqa: E402
+
+STOCKOUT_COLS = ['so1', 'so7', 'sor7', 'sor14', 'soh7', 'soh14']
+
+
+@pytest.fixture(scope='module')
+def stock_model():
+    import lightgbm as lgb
+    train, ev = make_stock_panel()
+    fb = FeatureBuilder(n_clusters=2).fit(train)
+    train_feat = fb.transform(train)
+    fc = fb.feature_cols(train_feat)
+    params = {'objective': 'regression_l1', 'metric': 'mae', 'num_leaves': 31,
+              'learning_rate': 0.1, 'verbose': -1, 'n_jobs': 1, 'seed': 42}
+    d = lgb.Dataset(train_feat[fc].fillna(0).values,
+                    label=train_feat['sale_amount'].values)
+    mdl = lgb.train(params, d, num_boost_round=50)
+    used = dict(zip(fc, mdl.feature_importance('split')))
+    return train, ev, fb, fc, {'mae': mdl, 'huber': mdl, 'q50': mdl}, used
+
+
+def test_stock_model_relies_on_stockout_history(stock_model):
+    """Precondition for the invariance tests below to be non-vacuous."""
+    *_, used = stock_model
+    assert sum(used[c] for c in STOCKOUT_COLS) > 0
+
+
+def test_recursive_invariant_to_eval_stock_status(stock_model):
+    """Every evaluation day's forecast must ignore evaluation-week stock
+    status: it is realised during those days, like their sales."""
+    train, ev, fb, fc, models, _ = stock_model
+    preds_a, _ = predict_eval_recursive(fb, models, fc, train, ev)
+    preds_b, _ = predict_eval_recursive(fb, models, fc, train, flip_stock_status(ev))
+    np.testing.assert_array_equal(
+        preds_a['mae'], preds_b['mae'],
+        err_msg="Recursive forecasts depend on evaluation-week stock status")
+
+
+def test_recursive_does_use_origin_stock_status(stock_model):
+    """Negative control: the last training day's stock status is known at
+    the origin and must still move the forecasts."""
+    train, ev, fb, fc, models, _ = stock_model
+    last = (train['dt'] == train['dt'].max()).to_numpy()
+    preds_a, _ = predict_eval_recursive(fb, models, fc, train, ev)
+    preds_b, _ = predict_eval_recursive(fb, models, fc,
+                                        flip_stock_status(train, last), ev)
+    assert not np.allclose(preds_a['mae'], preds_b['mae'])
+
+
+def test_single_origin_stockout_features_ignore_eval_stock_status(stock_model):
+    train, ev, fb, *_ = stock_model
+    _, feat_a, _ = predict_eval_single_origin(fb, {}, [], train, ev)
+    _, feat_b, _ = predict_eval_single_origin(fb, {}, [], train, flip_stock_status(ev))
+    for c in STOCKOUT_COLS:
+        np.testing.assert_array_equal(
+            feat_a[c].values, feat_b[c].values,
+            err_msg=f"Feature '{c}' reads evaluation-week stock status")
+
+
+def test_stockout_history_lag_map_covers_builder_output():
+    """Every stockout-history column the builder creates must be routed
+    through the origin-hold rule, with the most recent lag it reads."""
+    from src.feature_builder import STOCKOUT_HISTORY_MIN_LAG
+    df = pd.DataFrame({'sp': [1] * 10,
+                       'dt': pd.date_range('2024-01-01', periods=10),
+                       'cens': [0, 1] * 5,
+                       'stock_hour6_22_cnt': [0, 5] * 5})
+    created = set(FeatureBuilder._add_stockout(df.copy()).columns) - set(df.columns)
+    assert created == set(STOCKOUT_COLS) == set(STOCKOUT_HISTORY_MIN_LAG)
+    assert STOCKOUT_HISTORY_MIN_LAG['so7'] == 7
+    assert all(STOCKOUT_HISTORY_MIN_LAG[c] == 1 for c in STOCKOUT_COLS if c != 'so7')
